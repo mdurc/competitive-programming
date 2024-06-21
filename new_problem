@@ -1,0 +1,54 @@
+#!/bin/zsh
+
+typeset -A abbreviations
+abbreviations=(
+    "frequency" "freq"
+    "character" "char"
+    "compare" "cmp"
+    "duplicates" "dupes"
+    "duplicate" "dupe"
+    "strings" "strs"
+    "string" "str"
+    "adjacent" "adj"
+    "average" "avg"
+    "number" "num"
+    "numbers" "nums"
+    "value" "val"
+    "values" "vals"
+    "divisible" "div"
+    "temperature" "temp"
+)
+
+checkAbbreviations() {
+    local t=$1
+    if [[ -n ${abbreviations[$t]} ]]; then
+        t=${abbreviations[$t]}
+    fi
+    echo $t
+}
+
+if [[ $# -ne 1 ]]; then
+    echo "Usage: $0 \"14. Longest Common Prefix\"" >&2
+    exit 1
+fi
+
+t=$1
+
+ret="p${t%%.*}"
+
+words=(${(z)t})
+for (( i=2; i<=$#words; i++ )); do
+    t=${words[$i]}
+    t=${(L)t}
+    t=$(checkAbbreviations $t)
+    ret="${ret}_${t}"
+done
+
+ret="${ret}.cpp"
+echo $ret
+
+echo "#include <bits/stdc++.h>" > $ret
+echo "using namespace std;" >> $ret
+echo >> $ret
+
+exit 0
