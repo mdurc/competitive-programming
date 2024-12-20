@@ -2,6 +2,7 @@
 
 typeset -A abbreviations
 abbreviations=(
+    "letter" "char"
     "frequency" "freq"
     "character" "char"
     "compare" "cmp"
@@ -22,9 +23,10 @@ abbreviations=(
 checkAbbreviations() {
     local t=$1
     if [[ -n ${abbreviations[$t]} ]]; then
-        t=${abbreviations[$t]}
+        echo ${abbreviations[$t]}
+    else
+        echo $t
     fi
-    echo $t
 }
 
 if [[ $# -ne 1 ]]; then
@@ -34,19 +36,22 @@ fi
 
 t=$1
 
-ret="p${t%%.*}"
+# Extract number and pad to 4 digits
+num=$(printf "%04d" ${t%%.*})
+ret="${num}"
 
+# Split title into words
 words=(${(z)t})
 for (( i=2; i<=$#words; i++ )); do
-    t=${words[$i]}
-    t=${(L)t}
-    t=$(checkAbbreviations $t)
-    ret="${ret}_${t}"
+    word=${(L)words[$i]}
+    word=$(checkAbbreviations $word)
+    ret="${ret}-${word}"
 done
 
 ret="${ret}.cpp"
 echo $ret
 
+# Create the file with a basic template
 echo "#include <bits/stdc++.h>" > $ret
 echo "using namespace std;" >> $ret
 echo >> $ret

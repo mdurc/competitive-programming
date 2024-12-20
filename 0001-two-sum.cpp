@@ -1,8 +1,4 @@
-
-
-#include <map>
-
-
+#include <unordered_map>
 #include <iostream>
 #include <vector>
 
@@ -19,14 +15,11 @@ public:
     }
 
     std::vector<int> twoSum(std::vector<int>& nums, int target) {
-        std::map<int, int> m;
-        for(int i = 0 ; i <nums.size() ; ++i){
-            m[nums[i]] = i;
-        }
-        for(int i = 0 ; i <nums.size() ; ++i){
-            if(m.find(target-nums[i])!=m.end() && i!=m[target-nums[i]]){
-                return {i, m[target-nums[i]]};
-            }
+        std::unordered_map<int, int> m;
+        for (int i = 0 ; i < nums.size() ; ++i){
+            std::unordered_map<int,int>::iterator itr = m.find(target - nums[i]);
+            if (itr != m.end() && i != itr->second) return {i, itr->second};
+            else m[nums[i]] = i;
         }
         return {-1, -1};
     }

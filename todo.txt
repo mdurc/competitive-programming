@@ -1,1 +1,0 @@
-p2062_count_vowel_substrs.cpp
