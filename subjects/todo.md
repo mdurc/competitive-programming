@@ -1,0 +1,62 @@
+## arrays-hashing
+- [x] 217-contains-duplicates.cpp
+- [x] 242-valid-anagram.cpp
+- [x] 1-two-sum.cpp
+- [x] 49-group-anagrams.cpp
+- [x] 347-top-k-frequent.cpp
+- [x] 271-encode-and-decode-strings.cpp
+- [x] 238-product-of-array-except-self.cpp
+- [x] 36-valid-sudoku.cpp
+- [x] 128-longest-consecutive-sequence.cpp
+
+## two-pointers
+- [x] 125-valid-palindrome.cpp
+- [x] 167-two-sum-ii.cpp
+- [x] 15-three-sum.cpp
+- [x] 11-containers-with-most-water.cpp
+- [x] 42-trapping-rain-water.cpp
+
+## stack
+- [x] 20-valid-parentheses.cpp
+- [x] 155-min-stack.cpp
+- [x] 150-evaluate-reverse-polish-notation.cpp
+- [x] 22-generate-parentheses.cpp
+- [x] 739-daily-temperatures.cpp
+- [x] 853-car-fleet.cpp
+- [x] 84-largest-rectangle-in-histogram.cpp
+
+## binary-search
+- [x] 704-binary-search.cpp
+- [x] 74-search-2d-matrix.cpp
+- [x] 875-koko-eating-bananas.cpp
+- [x] 153-find-minimum-in-rotated-sorted-array.cpp
+- [x] 33-search-in-rotated-sorted-array.cpp
+- [x] 981-time-based-key-value-store.cpp
+- [x] 4-median-of-two-sorted-arrays.cpp
+
+## sliding-window
+- [x] 121-best-time-to-buy-and-sell-stock.cpp
+- [x] 3-longest-substring-without-repeating-characters.cpp
+- [x] 424-longest-repeating-character-replacement.cpp
+- [x] 567-permutation-in-string.cpp
+- [x] 76-minimum-window-substring.cpp
+- [x] 239-sliding-window-maximum.cpp
+
+## linked-list
+- [x] 206-reverse-linked-list.cpp
+- [x] 21-merge-two-sorted-lists.cpp
+- [x] 141-linked-list-cycle.cpp
+- [x] 143-reorder-list.cpp
+- [x] 19-remove-nth-node-from-end-of-list.cpp
+- [x] 138-copy-list-with-random-pointer.cpp
+- [x] 2-add-two-numbers.cpp
+- [x] 287-find-duplicate-number.cpp
+- [x] 146-LRU-cache.cpp
+- [x] 23-merge-k-sorted-lists.cpp
+- [x] 25-reverse-nodes-in-k-group.cpp
+
+## trees
+- [x] 102-binary-tree-level-order-traversal.cpp
+
+
+
