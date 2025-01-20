@@ -71,3 +71,8 @@
 - [x] 105-construct-binary-tree-from-preorder-and-inorder-traversal.cpp
 - [x] 124-binary-tree-maximum-path-sum.cpp
 - [x] 297-serialize-and-deserialize-binary-tree.cpp
+
+## tries
+- [x] 208-implement-prefix-tree.cpp
+- [x] 211-design-add-and-search-words-data-structure.cpp
+- [x] 212-word-search-ii.cpp
