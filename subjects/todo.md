@@ -62,12 +62,12 @@
 - [x] 110-balanced-binary-tree.cpp
 - [x] 100-same-tree.cpp
 - [x] 572-subtree-of-another-tree.cpp
-- [ ] 235-lowest-common-ancestor-of-bst.cpp
+- [x] 235-lowest-common-ancestor-of-bst.cpp
 - [x] 102-binary-tree-level-order-traversal.cpp
-- [ ] 199-binary-tree-right-side-view.cpp
-- [ ] 1448-count-good-nodes-in-binary-tree.cpp
-- [ ] 98-validate-binary-search-tree.cpp
-- [ ] 230-kth-smallest-element-in-bst.cpp
-- [ ] 105-construct-binary-tree-from-preorder-and-inorder-traversal.cpp
-- [ ] 124-binary-tree-maximum-path-sum.cpp
-- [ ] 297-serialize-and-deserialize-binary-tree.cpp
+- [x] 199-binary-tree-right-side-view.cpp
+- [x] 1448-count-good-nodes-in-binary-tree.cpp
+- [x] 98-validate-binary-search-tree.cpp
+- [x] 230-kth-smallest-element-in-bst.cpp
+- [x] 105-construct-binary-tree-from-preorder-and-inorder-traversal.cpp
+- [x] 124-binary-tree-maximum-path-sum.cpp
+- [x] 297-serialize-and-deserialize-binary-tree.cpp
