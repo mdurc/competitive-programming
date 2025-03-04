@@ -76,3 +76,23 @@
 - [x] 208-implement-prefix-tree.cpp
 - [x] 211-design-add-and-search-words-data-structure.cpp
 - [x] 212-word-search-ii.cpp
+
+## heap/priority queue
+- [ ] 704-kth-largest-element-in-a-stream.cpp
+- [ ] 1046-last-stone-weight.cpp
+- [ ] 973-k-closest-points-to-origin.cpp
+- [ ] 215-kth-largest-element-in-array.cpp
+- [ ] 621-task-scheduler.cpp
+- [ ] 355-design-twitter.cpp
+- [ ] 295-find-median-from-data-stream.cpp
+
+## backtracking
+- [ ] 78-subsets.cpp
+- [ ] 39-combination-sum.cpp
+- [ ] 40-combination-sum-ii.cpp
+- [ ] 46-permutations.cpp
+- [ ] 90-subsets-ii.cpp
+- [ ] 79-word-search.cpp
+- [ ] 131-palindrome-partitioning.cpp
+- [ ] 17-letter-combinations-of-phone-number.cpp
+- [ ] 51-n-queens.cpp
