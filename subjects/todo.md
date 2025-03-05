@@ -96,3 +96,17 @@
 - [ ] 131-palindrome-partitioning.cpp
 - [ ] 17-letter-combinations-of-phone-number.cpp
 - [ ] 51-n-queens.cpp
+
+## 1-DP
+- [x] 70-climbing-stairs.cpp
+- [ ] 746-min-cost-climbing-stairs.cpp
+- [x] 198-house-robber.cpp
+- [ ] 213-house-robber-ii.cpp
+- [ ] 5-longest-palindromic-substring.cpp
+- [ ] 647-palindromic-substrings.cpp
+- [ ] 91-decode-ways.cpp
+- [ ] 322-coin-change.cpp
+- [ ] 152-maximum-product-subarray.cpp
+- [x] 139-word-break.cpp
+- [x] 300-longest-increasing-subsequence.cpp
+- [ ] 416-partition-equal-subset-sum.cpp
