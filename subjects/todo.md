@@ -97,6 +97,39 @@
 - [ ] 17-letter-combinations-of-phone-number.cpp
 - [ ] 51-n-queens.cpp
 
+## Graphs
+- [ ] 200-number-of-islands.cpp
+- [ ] 695-max-area-of-island.cpp
+- [ ] 133-clone-graph.cpp
+- [ ] 286-walls-and-gates.cpp
+- [ ] 994-rotting-oranges.cpp
+- [ ] 417-pacific-atlantic-water-flows.cpp
+- [ ] 130-surrounded-regions.cpp
+- [ ] 207-course-schedule.cpp
+- [ ] 210-course-schedule-ii.cpp
+- [ ] 261-graph-valid-tree.cpp
+- [ ] 323-number-of-connected-components-in-an-undirected-graph.cpp
+- [ ] 684-redundant-connection.cpp
+- [ ] 127-word-ladder.cpp
+
+## Advanced Graphs
+- [ ] 743-network-delay-time.cpp
+- [ ] 332-reconstruct-itinerary.cpp
+- [ ] 1584-min-cost-to-connect-all-points.cpp
+- [ ] 778-swim-in-rising-water.cpp
+- [ ] 269-alien-dictionary.cpp
+- [ ] 787-cheapest-flights-within-k-stops.cpp
+
+## Greedy
+- [ ] 53-maximum-subarray.cpp
+- [ ] 55-jump-game.cpp
+- [ ] 45-jump-game-ii.cpp
+- [ ] 134-gas-station.cpp
+- [ ] 846-hand-of-straights.cpp
+- [ ] 1899-merge-triplets-to-form-target-triplet.cpp
+- [ ] 763-partition-labels.cpp
+- [ ] 678-valid-parenthesis-string.cpp
+
 ## 1-DP
 - [x] 70-climbing-stairs.cpp
 - [ ] 746-min-cost-climbing-stairs.cpp
@@ -110,3 +143,43 @@
 - [x] 139-word-break.cpp
 - [x] 300-longest-increasing-subsequence.cpp
 - [ ] 416-partition-equal-subset-sum.cpp
+
+## 2-DP
+- [ ] 62-unique-paths.cpp
+- [ ] 1143-longest-common-subsequence.cpp
+- [ ] 309-best-time-to-buy-and-sell-stock-with-cooldown.cpp
+- [ ] 518-coin-change-ii.cpp
+- [ ] 494-target-sum.cpp
+- [ ] 97-interleaving-string.cpp
+- [ ] 329-longest-increasing-path-in-a-matrix.cpp
+- [ ] 115-distinct-subsequences.cpp
+- [ ] 72-edit-distance.cpp
+- [ ] 312-burst-baloons.cpp
+- [ ] 10-regular-expression-matching.cpp
+
+## Intervals
+- [ ] 57-insert-interval.cpp
+- [ ] 56-merge-intervals.cpp
+- [ ] 435-non-overlapping-intervals.cpp
+- [ ] 252-meeting-rooms.cpp
+- [ ] 253-meeting-rooms-ii.cpp
+- [ ] 1851-minimum-interval-to-include-each-query.cpp
+
+## Bit Manipulation
+- [ ] 136-single-number.cpp
+- [ ] 191-number-of-1-bits.cpp
+- [ ] 338-counting-bits.cpp
+- [ ] 190-reverse-bits.cpp
+- [ ] 268-missing-number.cpp
+- [ ] 371-sum-of-two-integers.cpp
+- [ ] 7-reverse-integer.cpp
+
+## Math and Geometry
+- [ ] 48-rotate-image.cpp
+- [ ] 54-spiral-matrix.cpp
+- [ ] 73-set-matrix-zeroes.cpp
+- [ ] 202-happy-number.cpp
+- [ ] 66-plus-one.cpp
+- [ ] 50-pow-x-n.cpp
+- [ ] 43-multiply-strings.cpp
+- [ ] 2013-detect-squares.cpp
