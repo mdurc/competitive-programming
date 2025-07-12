@@ -78,11 +78,11 @@
 - [x] 212-word-search-ii.cpp
 
 ## heap/priority queue
-- [ ] 704-kth-largest-element-in-a-stream.cpp
-- [ ] 1046-last-stone-weight.cpp
-- [ ] 973-k-closest-points-to-origin.cpp
-- [ ] 215-kth-largest-element-in-array.cpp
-- [ ] 621-task-scheduler.cpp
+- [x] 704-kth-largest-element-in-a-stream.cpp
+- [x] 1046-last-stone-weight.cpp
+- [x] 973-k-closest-points-to-origin.cpp
+- [x] 215-kth-largest-element-in-array.cpp
+- [x] 621-task-scheduler.cpp
 - [ ] 355-design-twitter.cpp
 - [ ] 295-find-median-from-data-stream.cpp
 
