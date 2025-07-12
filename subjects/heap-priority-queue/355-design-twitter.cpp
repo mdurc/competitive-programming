@@ -4,9 +4,17 @@ public:
     
     void postTweet(int userId, int tweetId) {
         m_user_tweets[userId].push({m_count++, tweetId});
+        if (
     }
     
     vector<int> getNewsFeed(int userId) {
+        priority_queue<pair<int, int>> pq = m_user_tweets[userId];
+        for (int other: m_user_follows[userId]) {
+            for (pair<int, int> p: m_user_tweets[other]) {
+                pq.push(p);
+                if (pq.size() > 10);
+            }
+        }
 
     }
     
