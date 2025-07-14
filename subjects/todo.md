@@ -83,8 +83,8 @@
 - [x] 973-k-closest-points-to-origin.cpp
 - [x] 215-kth-largest-element-in-array.cpp
 - [x] 621-task-scheduler.cpp
-- [ ] 355-design-twitter.cpp
-- [ ] 295-find-median-from-data-stream.cpp
+- [x] 355-design-twitter.cpp
+- [x] 295-find-median-from-data-stream.cpp
 
 ## backtracking
 - [ ] 78-subsets.cpp
