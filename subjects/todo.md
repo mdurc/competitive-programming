@@ -77,7 +77,7 @@
 - [x] 211-design-add-and-search-words-data-structure.cpp
 - [x] 212-word-search-ii.cpp
 
-## heap/priority queue
+## heap-priority-queue
 - [x] 704-kth-largest-element-in-a-stream.cpp
 - [x] 1046-last-stone-weight.cpp
 - [x] 973-k-closest-points-to-origin.cpp
@@ -97,7 +97,7 @@
 - [ ] 17-letter-combinations-of-phone-number.cpp
 - [ ] 51-n-queens.cpp
 
-## Graphs
+## graphs
 - [ ] 200-number-of-islands.cpp
 - [ ] 695-max-area-of-island.cpp
 - [ ] 133-clone-graph.cpp
@@ -112,7 +112,7 @@
 - [ ] 684-redundant-connection.cpp
 - [ ] 127-word-ladder.cpp
 
-## Advanced Graphs
+## advanced-graphs
 - [ ] 743-network-delay-time.cpp
 - [ ] 332-reconstruct-itinerary.cpp
 - [ ] 1584-min-cost-to-connect-all-points.cpp
@@ -120,7 +120,7 @@
 - [ ] 269-alien-dictionary.cpp
 - [ ] 787-cheapest-flights-within-k-stops.cpp
 
-## Greedy
+## greedy
 - [ ] 53-maximum-subarray.cpp
 - [ ] 55-jump-game.cpp
 - [ ] 45-jump-game-ii.cpp
@@ -130,7 +130,7 @@
 - [ ] 763-partition-labels.cpp
 - [ ] 678-valid-parenthesis-string.cpp
 
-## 1-DP
+## 1-dp
 - [x] 70-climbing-stairs.cpp
 - [ ] 746-min-cost-climbing-stairs.cpp
 - [x] 198-house-robber.cpp
@@ -144,7 +144,7 @@
 - [x] 300-longest-increasing-subsequence.cpp
 - [ ] 416-partition-equal-subset-sum.cpp
 
-## 2-DP
+## 2-dp
 - [ ] 62-unique-paths.cpp
 - [ ] 1143-longest-common-subsequence.cpp
 - [ ] 309-best-time-to-buy-and-sell-stock-with-cooldown.cpp
@@ -157,7 +157,7 @@
 - [ ] 312-burst-baloons.cpp
 - [ ] 10-regular-expression-matching.cpp
 
-## Intervals
+## intervals
 - [ ] 57-insert-interval.cpp
 - [ ] 56-merge-intervals.cpp
 - [ ] 435-non-overlapping-intervals.cpp
@@ -165,16 +165,16 @@
 - [ ] 253-meeting-rooms-ii.cpp
 - [ ] 1851-minimum-interval-to-include-each-query.cpp
 
-## Bit Manipulation
-- [ ] 136-single-number.cpp
-- [ ] 191-number-of-1-bits.cpp
-- [ ] 338-counting-bits.cpp
-- [ ] 190-reverse-bits.cpp
-- [ ] 268-missing-number.cpp
-- [ ] 371-sum-of-two-integers.cpp
-- [ ] 7-reverse-integer.cpp
+## bit-manipulation
+- [x] 136-single-number.cpp
+- [x] 191-number-of-1-bits.cpp
+- [x] 338-counting-bits.cpp
+- [x] 190-reverse-bits.cpp
+- [x] 268-missing-number.cpp
+- [x] 371-sum-of-two-integers.cpp
+- [x] 7-reverse-integer.cpp
 
-## Math and Geometry
+## math-geometry
 - [ ] 48-rotate-image.cpp
 - [ ] 54-spiral-matrix.cpp
 - [ ] 73-set-matrix-zeroes.cpp
