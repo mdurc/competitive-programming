@@ -120,15 +120,23 @@
 - [ ] 269-alien-dictionary.cpp
 - [ ] 787-cheapest-flights-within-k-stops.cpp
 
+## intervals
+- [ ] 57-insert-interval.cpp
+- [ ] 56-merge-intervals.cpp
+- [ ] 435-non-overlapping-intervals.cpp
+- [ ] 252-meeting-rooms.cpp
+- [ ] 253-meeting-rooms-ii.cpp
+- [ ] 1851-minimum-interval-to-include-each-query.cpp
+
 ## greedy
-- [ ] 53-maximum-subarray.cpp
-- [ ] 55-jump-game.cpp
-- [ ] 45-jump-game-ii.cpp
-- [ ] 134-gas-station.cpp
-- [ ] 846-hand-of-straights.cpp
-- [ ] 1899-merge-triplets-to-form-target-triplet.cpp
-- [ ] 763-partition-labels.cpp
-- [ ] 678-valid-parenthesis-string.cpp
+- [x] 53-maximum-subarray.cpp
+- [x] 55-jump-game.cpp
+- [x] 45-jump-game-ii.cpp
+- [x] 134-gas-station.cpp
+- [x] 846-hand-of-straights.cpp
+- [x] 1899-merge-triplets-to-form-target-triplet.cpp
+- [x] 763-partition-labels.cpp
+- [x] 678-valid-parenthesis-string.cpp
 
 ## 1-dp
 - [x] 70-climbing-stairs.cpp
@@ -156,14 +164,6 @@
 - [ ] 72-edit-distance.cpp
 - [ ] 312-burst-baloons.cpp
 - [ ] 10-regular-expression-matching.cpp
-
-## intervals
-- [ ] 57-insert-interval.cpp
-- [ ] 56-merge-intervals.cpp
-- [ ] 435-non-overlapping-intervals.cpp
-- [ ] 252-meeting-rooms.cpp
-- [ ] 253-meeting-rooms-ii.cpp
-- [ ] 1851-minimum-interval-to-include-each-query.cpp
 
 ## bit-manipulation
 - [x] 136-single-number.cpp
