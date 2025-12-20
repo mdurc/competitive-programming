@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>name</key>
+    <string>CP Trie Color Scheme</string>
+    <key>settings</key>
+    <array>
+        <!-- Global settings -->
+        <dict>
+            <key>settings</key>
+            <dict>
+                <key>background</key>
+                <string>#FFFFFF</string>
+                <key>foreground</key>
+                <string>#000000</string>
+                <key>caret</key>
+                <string>#000000</string>
+            </dict>
+        </dict>
+
+        <!-- Keyword -->
+        <dict>
+            <key>name</key>
+            <string>Keyword</string>
+            <key>scope</key>
+            <string>keyword.control, storage.type, storage.modifier, keyword.declaration</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#7F0055</string> <!-- dkpurple -->
+            </dict>
+        </dict>
+
+        <!-- Comment -->
+        <dict>
+            <key>name</key>
+            <string>Comment</string>
+            <key>scope</key>
+            <string>comment</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#3F7F55</string> <!-- dkgreen -->
+            </dict>
+        </dict>
+
+        <!-- Function / Type names -->
+        <dict>
+          <key>name</key>
+          <string>Function/Type</string>
+          <key>scope</key>
+          <string>entity.name.function, entity.name.type, support.type</string>
+          <key>settings</key>
+          <dict>
+            <key>foreground</key>
+            <string>#0000CD</string> <!-- blue -->
+          </dict>
+        </dict>
+
+        <!-- String -->
+        <dict>
+            <key>name</key>
+            <string>String</string>
+            <key>scope</key>
+            <string>string</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#9A0000</string> <!-- dkred -->
+            </dict>
+        </dict>
+
+        <!-- Number -->
+        <dict>
+            <key>name</key>
+            <string>Number</string>
+            <key>scope</key>
+            <string>constant.numeric</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#7F00FF</string> <!-- purple from example -->
+            </dict>
+        </dict>
+
+        <!-- Function / Type names -->
+        <dict>
+            <key>name</key>
+            <string>Function/Type</string>
+            <key>scope</key>
+            <string>entity.name.function, entity.name.type, support.type</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#000000</string>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>
