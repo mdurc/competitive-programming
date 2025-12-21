@@ -87,15 +87,15 @@
 - [x] 295-find-median-from-data-stream.cpp
 
 ## backtracking
-- [ ] 78-subsets.cpp
-- [ ] 39-combination-sum.cpp
-- [ ] 40-combination-sum-ii.cpp
-- [ ] 46-permutations.cpp
-- [ ] 90-subsets-ii.cpp
-- [ ] 79-word-search.cpp
-- [ ] 131-palindrome-partitioning.cpp
-- [ ] 17-letter-combinations-of-phone-number.cpp
-- [ ] 51-n-queens.cpp
+- [x] 78-subsets.cpp
+- [x] 39-combination-sum.cpp
+- [x] 40-combination-sum-ii.cpp
+- [x] 46-permutations.cpp
+- [x] 90-subsets-ii.cpp
+- [x] 79-word-search.cpp
+- [x] 131-palindrome-partitioning.cpp
+- [x] 17-letter-combinations-of-phone-number.cpp
+- [x] 51-n-queens.cpp
 
 ## graphs
 - [ ] 200-number-of-islands.cpp
