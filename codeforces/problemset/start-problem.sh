@@ -39,9 +39,9 @@ extract_problem_data() {
 }
 print_problem_data() {
   echo "Problem: $problem_contestId$problem_index - $problem_name"
-  # echo "Rating: $problem_rating"
+  echo "Rating: $problem_rating"
   echo "Solved: $problem_solved_count"
-  echo "Tags: $problem_tags"
+  # echo "Tags: $problem_tags"
   echo "https://codeforces.com/problemset/problem/$problem_contestId/$problem_index"
 }
 enter_problem() {
