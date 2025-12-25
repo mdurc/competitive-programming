@@ -4,7 +4,7 @@
 # https://codeforces.com/problemset/problem/2135/A2
 # https://codeforces.com/contest/2135/problem/A1
 
-data_file="problemsetdata.json"
+data_file="/Users/mdurcan/personal/competitive-programming/codeforces/data.json"
 
 usage() {
   echo "Usage:"
