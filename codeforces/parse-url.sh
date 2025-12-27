@@ -45,7 +45,7 @@ print_problem_data() {
   echo "https://codeforces.com/problemset/problem/$problem_contestId/$problem_index"
 }
 enter_problem() {
-  file=$(echo "$problem_contestId$problem_index-$problem_name.cpp" | tr -d ' ')
+  file=$(echo "$problem_contestId$problem_index-$problem_name.cpp" | tr -cd '[:alnum:]._-' )
   touch "$file"
   nvim "$file"
 }

@@ -1,4 +1,5 @@
 -std=c++17
+-DLOCAL
 -O2
 -Wall
 -Wextra
