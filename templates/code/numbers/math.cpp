@@ -1,81 +1,90 @@
-// classic sieve up to max_n
-vector<ll> sieve_up_to(ll max_n) {
-  if (max_n < 2) return {};
-  vector<bool> is_prime(max_n + 1, true);
+#include <bits/stdc++.h>
+using ll = long long;
+const int mxn = 2e5 + 5;
+bool is_prime[mxn];
+int min_prime_factor[mxn];
+
+// computes primes and min_prime_factor up to n in O(n log n)
+std::vector<int> sieve(int n = mxn) {
+  std::fill(is_prime, is_prime + n, true);
   is_prime[0] = is_prime[1] = false;
-  for (ll i = 2; i * i <= max_n; ++i) {
+  for (int i = 2; i*i < n; ++i) {
     if (is_prime[i]) {
-      for (ll j = i * i; j <= max_n; j += i) is_prime[j] = false;
+      for (int j = i*i; j < n; j += i) {
+        is_prime[j] = false;
+        if (min_prime_factor[j] == 0) {
+          min_prime_factor[j] = i;
+        }
+      }
     }
   }
-  vector<ll> primes;
-  primes.reserve(max_n / log(max_n)); // rough estimate
-  for (ll i = 2; i <= max_n; ++i)
-    if (is_prime[i]) primes.push_back(i);
-  return primes;
-}
-
-// segmented sieve for [low, high]
-vector<ll> sieve_range(ll low, ll high) {
-  if (high < 2 || low > high) return {};
-  if (low < 2) low = 2;
-
-  ll limit = sqrt(high) + 1;
-  auto base_primes = sieve_up_to(limit);
-  vector<bool> is_prime(high - low + 1, true);
-  for (ll p : base_primes) {
-    ll start = max(p * p, ((low + p - 1) / p) * p);
-    for (ll j = start; j <= high; j += p) is_prime[j - low] = false;
-  }
-  vector<ll> primes;
-  for (ll i = 0; i <= high - low; ++i)
-    if (is_prime[i]) primes.push_back(low + i);
-  return primes;
-}
-
-vector<vector<int>> subsets(vector<int>& nums) {
-  vector<vector<int>> ans;
-  int n = nums.size();
-  int len = (1 << n);             // powerset size: 2^n
-  for (int i = 0; i < len; ++i) { // every set bits is the index to include
-    vector<int> cur;
-    for (int j = 0; j < n; ++j) {
-      if (i & (1 << j)) cur.push_back(nums[j]);
-    }
-    ans.push_back(cur);
-  }
-  return ans;
-}
-
-// find the prime factors
-vector<int> compute_prime_factors(int n) {
-  vector<int> factors;
-  for (int i = 2; i * i <= n; ++i) {
-    while (n % i == 0) {
-      factors.push_back(i);
-      n /= i;
-    }
-  }
-  if (n > 1) factors.push_back(n); // n is prime
-  return factors;
-}
-
-vector<int> divisors(int n) {
-  vector<int> res;
-  for (int i = 1; i * i <= n; ++i) {
-    if (n % i == 0) {
+  std::vector<int> res;
+  for (int i = 2; i < n; ++i) {
+    if (is_prime[i]) {
       res.push_back(i);
-      if (i != n / i) res.push_back(n / i);
+      min_prime_factor[i] = i;
     }
   }
-  sort(res.begin(), res.end());
   return res;
 }
 
+// all/unique prime factors of n, using min_prime_factor from sieve. O(log n)
+std::vector<int> prime_factors(int n, bool unique = false) {
+  std::vector<int> res;
+  while (n > 1) {
+    int p = min_prime_factor[n];
+    res.push_back(p);
+    if (unique) while (n % p == 0) n /= p;
+    else n /= p;
+  }
+  return res;
+}
+
+// all prime factors of n, no precomputation. O(sqrt(n))
+std::vector<int> prime_factors(int n) {
+  std::vector<int> res;
+  for (int i = 2; i*i <= n; ++i) {
+    while (n % i == 0) {
+      res.push_back(i);
+      n /= i;
+    }
+  }
+  if (n > 1) res.push_back(n);
+  return res;
+}
+
+// all divisors of n. O(sqrt(n))
+std::vector<int> factors(int n) {
+  std::vector<int> res;
+  for (int i = 1; i*i <= n; ++i) {
+    if (n % i == 0) {
+      res.push_back(i);
+      if (i != n/i) res.push_back(n/i);
+    }
+  }
+  return res;
+}
+
+// all 2^n subsets. O(n * 2^n), thus n <= 20
+std::vector<std::vector<int>> subsets(std::vector<int>& nums) {
+  std::vector<std::vector<int>> res;
+  int n = (int)nums.size();
+  int len = (1 << n);             // powerset size: 2^n
+  for (int i = 0; i < len; ++i) { // every set bits is the index to include
+    std::vector<int> cur;
+    for (int j = 0; j < n; ++j) {
+      if (i & (1 << j)) cur.push_back(nums[j]);
+    }
+    res.push_back(cur);
+  }
+  return res;
+}
+
+// O(log(min(a, b))), just use std::gcd and std::lcm
 ll gcd(ll a, ll b) {
   while (b) {
     a %= b;
-    swap(a, b);
+    std::swap(a, b);
   }
   return a;
 }
@@ -101,11 +110,11 @@ ll mod_inv(ll a) { return mod_pow(a, MOD - 2); }
 ll mod_div(ll a, ll b) { return mod_mul(a, mod_inv(b)); }
 
 // Combinatorics
-const int MAX_N = 1e5 + 10;
-vector<ll> fact(MAX_N), inv_fact(MAX_N);
+ll fact[mxn], inv_fact[mxn];
 void precompute_factorials(int n) {
   fact[0] = 1;
-  for (int i = 1; i <= n; i++) fact[i] = mod_mul(fact[i - 1], i);
+  for (int i = 1; i <= n; i++)
+    fact[i] = mod_mul(fact[i - 1], i);
   inv_fact[n] = mod_inv(fact[n]);
   for (int i = n - 1; i >= 0; i--) {
     inv_fact[i] = mod_mul(inv_fact[i + 1], i + 1);

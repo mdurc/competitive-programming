@@ -5,6 +5,7 @@ import re
 import argparse
 from pathlib import Path
 from threading import Thread
+import shutil
 
 PORT = 10043
 RECEIVED = 0
@@ -36,7 +37,12 @@ def write_cpp(filename: str, data: dict):
     if path.exists():
         print(f"{filename} already exists, skipping.")
         return
-    path.touch()
+    template_path = Path("/Users/mdurcan/personal/competitive-programming/templates/solve.cpp")
+    try:
+        shutil.copy(template_path, path)
+    except FileNotFoundError:
+        path.touch()
+        print(f"ERROR: Template not found at {template_path}")
     print(f"Created {filename} from data:", data)
 
 class CompetitiveCompanionHandler(http.server.BaseHTTPRequestHandler):
