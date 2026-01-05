@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 
-
 int state = -1;
 std::vector<std::pair<int,int>> match(std::string& s) {
   std::vector<std::pair<int,int>> res;
