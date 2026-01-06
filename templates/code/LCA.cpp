@@ -1,5 +1,6 @@
+// Assumes 1-based node indexing
 struct LCA {
-  int n, MAX_LOG;
+  int n, MAX_LOG = 20;
   vector<vector<int>> adj; // adjacency list of the tree
   vector<vector<int>> up;  // up[v][j] = 2^j-th ancestor of v
   vector<int> depth;
