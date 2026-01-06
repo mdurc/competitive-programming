@@ -98,19 +98,19 @@
 - [x] 51-n-queens.cpp
 
 ## graphs
-- [ ] 200-number-of-islands.cpp
-- [ ] 695-max-area-of-island.cpp
-- [ ] 133-clone-graph.cpp
-- [ ] 286-walls-and-gates.cpp
-- [ ] 994-rotting-oranges.cpp
-- [ ] 417-pacific-atlantic-water-flows.cpp
-- [ ] 130-surrounded-regions.cpp
-- [ ] 207-course-schedule.cpp
-- [ ] 210-course-schedule-ii.cpp
-- [ ] 261-graph-valid-tree.cpp
-- [ ] 323-number-of-connected-components-in-an-undirected-graph.cpp
-- [ ] 684-redundant-connection.cpp
-- [ ] 127-word-ladder.cpp
+- [x] 200-number-of-islands.cpp
+- [x] 695-max-area-of-island.cpp
+- [x] 133-clone-graph.cpp
+- [x] 286-walls-and-gates.cpp
+- [x] 994-rotting-oranges.cpp
+- [x] 417-pacific-atlantic-water-flows.cpp
+- [x] 130-surrounded-regions.cpp
+- [x] 207-course-schedule.cpp
+- [x] 210-course-schedule-ii.cpp
+- [x] 261-graph-valid-tree.cpp
+- [x] 323-number-of-connected-components-in-an-undirected-graph.cpp
+- [x] 684-redundant-connection.cpp
+- [x] 127-word-ladder.cpp
 
 ## advanced-graphs
 - [ ] 743-network-delay-time.cpp
