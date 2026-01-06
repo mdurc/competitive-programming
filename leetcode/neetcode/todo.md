@@ -113,12 +113,12 @@
 - [x] 127-word-ladder.cpp
 
 ## advanced-graphs
-- [ ] 743-network-delay-time.cpp
-- [ ] 332-reconstruct-itinerary.cpp
-- [ ] 1584-min-cost-to-connect-all-points.cpp
-- [ ] 778-swim-in-rising-water.cpp
-- [ ] 269-alien-dictionary.cpp
-- [ ] 787-cheapest-flights-within-k-stops.cpp
+- [x] 743-network-delay-time.cpp
+- [x] 332-reconstruct-itinerary.cpp
+- [x] 1584-min-cost-to-connect-all-points.cpp
+- [x] 778-swim-in-rising-water.cpp
+- [x] 269-alien-dictionary.cpp
+- [x] 787-cheapest-flights-within-k-stops.cpp
 
 ## intervals
 - [ ] 57-insert-interval.cpp
