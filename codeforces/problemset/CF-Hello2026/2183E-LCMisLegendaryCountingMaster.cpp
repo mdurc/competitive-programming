@@ -132,7 +132,7 @@ public:
   static Barrett<U> bt;
 };
 
-const int MOD = 1000000007;
+const int MOD = 998244353;
 using Mint = Mod<unsigned int, MOD>;
 
 template<typename U, unsigned int Id> Barrett<U> DynMod<U, Id>::bt = MOD;
@@ -165,3 +165,70 @@ struct Comb {
   Mint choose(int a, int b) { return (a < b || b < 0) ? 0 : fact(a) * invfact(b) * invfact(a - b); }
   Mint permute(int a, int b) { return (a < b || b < 0) ? 0 : fact(a) * invfact(a - b); }
 } comb;
+
+const int mxn = 3001;
+std::vector<int> divisors[mxn];
+void precompute() {
+  for (int i = 1; i < mxn; ++i) {
+    for (int j = 1; j*j <= i; ++j) {
+      if (i % j == 0) {
+        divisors[i].push_back(j);
+        if (j != i/j) divisors[i].push_back(i/j);
+      }
+    }
+  }
+}
+
+void solve() {
+  int n, m;
+  std::cin >> n >> m;
+  std::vector<int> a(n);
+  for (int i = 0; i < n; ++i) std::cin >> a[i];
+  if (a[0] > 1) {
+    std::cout << "0\n";
+    return;
+  }
+  // dp[i][j] = of items 1..i, number that end with sum j
+  std::vector<std::vector<Mint>> dp(n+1, std::vector<Mint>(m+1, 0));
+  dp[1][1] = 1;
+  for (int i = 2; i <= n; ++i) {
+    int nxt = a[i-1];
+    if (nxt == 0) {
+      for (int j = 1; j <= m; ++j) {
+        if (dp[i-1][j].x == 0) continue;
+        for (int d: divisors[j]) {
+          if (j+d <= m) {
+            dp[i][j+d] += dp[i-1][j];
+          }
+        }
+      }
+    } else {
+      for (int j = 1; j < nxt; ++j) {
+        if (dp[i-1][j].x == 0) continue;
+        if (j % (nxt - j) == 0) {
+          dp[i][nxt] += dp[i-1][j];
+        }
+      }
+    }
+  }
+  Mint ans = 0;
+  for (int i = 1; i <= m; ++i) {
+    ans += dp[n][i];
+  }
+  std::cout << ans << "\n";
+}
+
+int main() {
+  std::ios::sync_with_stdio(false);
+  std::cin.tie(nullptr);
+
+  precompute();
+
+  int t = 1;
+  std::cin >> t;
+  while (t--) {
+    solve();
+  }
+
+  return 0;
+}

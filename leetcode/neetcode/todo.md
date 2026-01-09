@@ -121,12 +121,12 @@
 - [x] 787-cheapest-flights-within-k-stops.cpp
 
 ## intervals
-- [ ] 57-insert-interval.cpp
-- [ ] 56-merge-intervals.cpp
-- [ ] 435-non-overlapping-intervals.cpp
-- [ ] 252-meeting-rooms.cpp
-- [ ] 253-meeting-rooms-ii.cpp
-- [ ] 1851-minimum-interval-to-include-each-query.cpp
+- [x] 57-insert-interval.cpp
+- [x] 56-merge-intervals.cpp
+- [x] 435-non-overlapping-intervals.cpp
+- [x] 252-meeting-rooms.cpp
+- [x] 253-meeting-rooms-ii.cpp
+- [x] 1851-minimum-interval-to-include-each-query.cpp
 
 ## greedy
 - [x] 53-maximum-subarray.cpp
@@ -180,6 +180,6 @@
 - [ ] 73-set-matrix-zeroes.cpp
 - [ ] 202-happy-number.cpp
 - [ ] 66-plus-one.cpp
-- [ ] 50-pow-x-n.cpp
+- [x] 50-pow-x-n.cpp
 - [ ] 43-multiply-strings.cpp
 - [ ] 2013-detect-squares.cpp
