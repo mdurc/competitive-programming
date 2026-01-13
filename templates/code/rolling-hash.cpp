@@ -1,21 +1,21 @@
 #include <bits/stdc++.h>
-using ll = long long;
-using ull = unsigned long long;
-using uint = unsigned int;
-using u128 = unsigned __int128;
-using i128 = __int128;
+
+// using ll = long long;
+// using ull = unsigned long long;
+// using u128 = unsigned __int128;
+
 // using H = unsigned long long; // for no anti-hash test cases (2x faster)
 struct H {
-	ull x; H(ull x=0) : x(x) {}
+	unsigned long long x; H(unsigned long long x=0) : x(x) {}
 	H operator+(H o) { return x + o.x + (x + o.x < x); }
 	H operator-(H o) { return *this + ~o.x; }
-	H operator*(H o) { auto m = (u128)x * o.x; return H((ull)m) + (ull)(m >> 64); }
-	ull get() const { return x + !~x; }
+	H operator*(H o) { auto m = (unsigned __int128)x * o.x; return H((unsigned long long)m) + (unsigned long long)(m >> 64); }
+	unsigned long long get() const { return x + !~x; }
 	bool operator==(H o) const { return get() == o.get(); }
 	bool operator<(H o) const { return get() < o.get(); }
 };
 
-static const H C = (ll)1e11+3;
+static const H C = (long long)1e11+3;
 // static H C;
 struct HashInterval {
   int n;

@@ -1,5 +1,11 @@
 #include <bits/stdc++.h>
 
+// using ll = long long;
+// using ull = unsigned long long;
+// using uint = unsigned int;
+// using u128 = unsigned __int128;
+// using i128 = __int128;
+
 template <typename T>
 constexpr T bpow(T a, unsigned long long n) {
   T res = 1;
