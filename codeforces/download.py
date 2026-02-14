@@ -12,6 +12,8 @@ RECEIVED = 0
 TARGET_DIR = None
 TARGET_COUNT = None
 
+DEBUG = False
+
 def sanitize_name(name: str) -> str:
     return re.sub(r'[^A-Za-z0-9]', '', name)
 
@@ -43,11 +45,15 @@ def write_cpp(filename: str, data: dict):
     except FileNotFoundError:
         path.touch()
         print(f"ERROR: Template not found at {template_path}")
-    print(f"Created {filename} from data:", data)
+    if DEBUG:
+        print(f"Created {filename} from data:", data)
+    else:
+        print(f"Created {filename}")
 
 class CompetitiveCompanionHandler(http.server.BaseHTTPRequestHandler):
     def log_message(self, format, *args):
-        super().log_message(format, *args)
+        if DEBUG:
+            super().log_message(format, *args)
     def do_POST(self):
         global RECEIVED
         length = int(self.headers["Content-Length"])

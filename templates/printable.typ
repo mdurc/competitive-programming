@@ -14,7 +14,7 @@
     stroke: luma(50%),
     radius: 0.3em,
   )[
-    #raw(read(file), lang: lang, theme: "codetheme.tmTheme")
+    #raw(read(file), lang: lang, theme: "theme.tmTheme")
   ]
 }
 
