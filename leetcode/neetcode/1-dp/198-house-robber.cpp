@@ -20,3 +20,19 @@ public:
         return dp[n-1];
     }
 };
+
+/*
+class Solution {
+public:
+    int rob(vector<int>& nums) {
+        int n = (int)nums.size();
+        std::vector<std::array<int, 2>> dp(n);
+        dp[0][0] = nums[0], dp[0][1] = 0;
+        for (int i = 1; i < n; ++i) {
+            dp[i][0] = dp[i-1][1] + nums[i];
+            dp[i][1] = std::max(dp[i-1][0], dp[i-1][1]);
+        }
+        return std::max(dp[n-1][0], dp[n-1][1]);
+    }
+};
+*/
