@@ -1,4 +1,5 @@
 // https://codeforces.com/problemset/problem/768/E
+
 #include <bits/stdc++.h>
 using namespace std;
 #define first() { cout << "NO\n"; exit(0); }

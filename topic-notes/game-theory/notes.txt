@@ -1,0 +1,140 @@
+https://codeforces.com/blog/entry/66040
+
+Normal play convention: player who makes the last move wins
+Partisan game: available moves are dependent on a player's current state
+Impartial game: both players have the same moves at any turn
+
+Winning state: when the current turn player has a forced
+                winning strategy on the current game state (mate in 3).
+Losing state: no matter what the current turn player does,
+                the opponent has a winning strategy.
+
+Nim Game:
+ * The game state is n piles of stones, each pile
+   containing some nonnegative (p_i) number of stones.
+ * There are two players who take turns.
+ * The current turn player may pick one pile of p_i stones and
+    remove any number of its stones (1 <= s <= p_i).
+    You cannot pass your turn without taking at least one stone.
+ * The game ends when there are no more stones left.
+    The winner is the one who took the last stone.
+    The loser is the one who cannot take any stone on their turn.
+
+Question:
+  Given an initial game state p_1, p_2, ..., p_n,
+   is the first or second player going to win, assuming optimal play?
+   (i.e., is the initial game state a winning or losing state)
+
+Analogy regarding how we can evaluate the composition of game-states:
+  * a multiplicitive function is one where:
+    1. f(1) = 1
+    2. f(ab) = f(a)f(b)
+  * if we can evaluate the individual functions f(a) and f(b) of the game state
+     we can easily compose them to evaluate f(ab).
+
+== Defining what a Nim-value is
+  * For each game state, g, we will give it an integer "Nim-value", G, which
+     tells us if this is a winning state or a losing state.
+  * Given two game states, a and b with Nim-values A and B respectively,
+     let a+b be the game state where simply all of the piles
+     of a are placed next to all of the piles of b.
+  * A OP B will be the Nim-value of the game state a+b.
+     This is some operator that facilitates the composition of game-states
+     by evaluating the new Nim-value.
+
+== Determining what each Nim-value corresponds to (winning or losing state)
+We can start by considering a simple game state: one pile of p stones.
+  * Since the only information about this game state is the pile with p stones,
+     the Nim-value must be p. We don't know if this represents a "winning"
+     or "losing" state, but we know the integer value.
+  * Intuitively, we know that p > 0 will be a winning state and p = 0
+     will be a losing state.
+  * Since Nim-value = p, we can determine that a Nim-value G corresponds
+     to a winning game state when G > 0, and a losing game state when G = 0
+
+== What is the composition operator to evaluate a new Nim-value given A, B?
+1. (A op B) op C = A op (B op C)
+  The operator is associative and commutative.
+  When we move piles next to pre-existing piles, ordering doesn't matter.
+2. A op 0 = A
+  When a Nim-value is 0, in our simple example, it was when p = 0.
+  In that case, the resulting pile is that from a.
+  Since we aren't changing any piles, the Nim-value for the composition
+  should stay the same.
+3. A op A = 0
+  In our simple example, this means we have two piles, each containing
+  the same number of stones.
+  The second player will always have the winning strategy here because
+  they can always simply mirror every move of the first player. Because
+  of this, it is guaranteed that the second player will be the last to move.
+  Thus, the first (current) player is in a losing game state (G = 0).
+
+Particularly from the third property, we know that every number
+ is its own inverse. This means that each non-zero element in the group
+ has an order of 2: {0,1}. This is the operation of additon-without-carry
+ or addition modulo 2, which are both equivalent to XOR.
+
+
+
+******* Proof *******
+
+Claim:
+ given a game of Nim whose current game state consists of n piles with
+  p1, p2, ..., pn
+  then the current game state is a winning state if the Nim-sum of piles
+  G = p1 XOR p2 ... XOR pn
+  is non-zero, and a losing state if it equal to zero.
+
+Proof:
+After a given move the new sum is: (p1 XOR p2 ... XOR pn) XOR p_i XOR (p_i - s)
+
+1. The empty game is a losing state with Nim-sum 0.
+2. If Nim-sum = 0, then any move will make it non-zero.
+    The new sum must be (0) XOR p_i XOR (p_i - s),
+    and since 1 <= s <= p_i, the new sum is non-zero.
+3. If Nim-sum > 0, then there is always a move to make it equal 0.
+    The new sum must be (N) XOR p_i XOR (p_i - s), thus we need
+    p_i XOR (p_i - s) = N for this new Nim-sum to equal zero.
+    We know that since N is non-zero, it must have a MSB, the g'th bit;
+    thus there must exist at least one pile p_i where the g'th bit is
+    also set (due to N being the XOR-sum of all p_j). We can choose one
+    of these piles as p_i and construct (p_i - s) as follows:
+    - All bits greater than the g'th bit stay the same.
+    - The g'th bit is set to zero.
+    - All bits less than the g'th bit should match N XOR p_i.
+
+
+******* Solving Problems *******
+== The Sprague-Grundy Theorem
+  * Every impartial game under the normal play convention is equivalent
+    to a game of Nim with a single pile of a certain size.
+  * Sub-games (piles) should be INDEPENDENT from one another.
+     The current player needs to have the freedom to choose any subgame,
+     and their move cannot alter the state of other subgames.
+  * This "size" is called the Grundy value (or nim-value) of the game state.
+  * If a game state has a Grundy value of G, it behaves exactly like
+    a Nim pile of size G.
+  * Therefore, a game state is a winning state if G > 0, and a losing
+    state if G = 0.
+
+== Modeling the Game as a Graph
+  * Any impartial game can be represented as a DAG
+  * Vertices represent specific game states.
+  * Directed edges represent valid moves from one state to another.
+  * Terminal states (vertices with no outgoing edges) are losing states
+    because the current player has no valid moves left to make.
+
+Minimum Excluded (MEX) function:
+ smallest non-negative integer not present in the set.
+ mex({0, 1, 3}) = 2
+ mex({}) = 0
+
+* Let u be a current game state.
+* Let v_1, v_2, ..., v_k be the adjacencies of u
+* G(terminal) = mex({}) = 0
+* G(u) = mex({G(v_1), G(v_2), ..., G(v_k)})
+
+== Composing Independent Sub-Games
+  * Nim consists of independent piles of stones and we compose the final
+     evaluated answer by performing XOR on the Nim-values.
+  * Grundy value for an entire game is the XOR of all the sub-games.
