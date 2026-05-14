@@ -1,3 +1,6 @@
+std::lower_bound(a.begin(), a.end(), 5); // find first element >= 5
+std::upper_bound(a.begin(), a.end(), 5); // find first element > 5
+
 // LOWER BOUND
 int l = 1, r = n; // both l and r are in the search space
 while (l < r) {
@@ -11,7 +14,7 @@ while (l < r) {
 }
 return l; // l == r
 
-// UPPER BOUND
+// Find LAST true
 int l = 1, r = n; // both l and r are in the search space
 while (l < r) {
   int mid = l + (r - l + 1) / 2; // pick right middle element (avoid inf loop)
