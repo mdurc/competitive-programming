@@ -1,3 +1,36 @@
+// mxn = 2*1e5
+const int sz = (1 << 18); // 262,144 > 2*1e5
+int tree[sz * 2];         // root node at 1, leaf nodes start at tree[sz] (second half of array)
+void build(const std::vector<int>& a) {
+  int n = (int)a.size();
+  // fill in leaf nodes [sz,2*sz-1] then parent nodes [1..sz-1]
+  for (int i = 0; i < n; ++i) tree[sz + i] = a[i];
+  for (int i = sz-1; i >= 1; --i) tree[i] = tree[2*i] + tree[2*i+1];
+}
+// change(1, 0, sz-1, idx:0-based, value)
+void change(int node, int node_lo, int node_hi, int idx, ll val) {
+  if (node_lo == idx && node_hi == idx) { tree[node] = val; return; } // leaf node
+  if (node_lo > idx || node_hi < idx) return;
+  int end_low = node_lo + (node_hi - node_lo) / 2;
+  change(2 * node, node_lo, end_low, idx, val);
+  change(2 * node + 1, end_low + 1, node_hi, idx, val);
+  tree[node] = tree[2 * node] + tree[2 * node + 1];
+}
+void change_itr(int idx, ll val) {
+  tree[sz + idx] = val;
+  for (int i = (sz+idx)/2; i >= 1; i /= 2) tree[i] = tree[2*i] + tree[2*i+1];
+}
+// query(1, 0, sz-1, l, r) --> note that lo and hi are all 0-based
+ll q(int l, int r) { return query(1, 0, sz-1, l, r); }
+ll query(int node, int node_lo, int node_hi, int l, int r) {
+  if (l <= node_lo && node_hi <= r) return tree[node];
+  if (node_lo > r || node_hi < l) return 0; // default value for disjoint node
+  int end_low = node_lo + (node_hi - node_lo) / 2;
+  return query(2 * node, node_lo, end_low, l, r) +
+         query(2 * node + 1, end_low + 1, node_hi, l, r);
+}
+
+// TEMPLATE:
 struct Node {
   ll sum, pref;
   friend Node operator+(Node l, Node r) {
@@ -38,13 +71,13 @@ struct SGT {
     change(2 * node + 1, end_low + 1, node_hi, idx, val);
     tree[node] = tree[2 * node] + tree[2 * node + 1];
   }
-  void change_iter(int idx, ll val) {
+  void change_itr(int idx, ll val) {
     tree[sz + idx] = val;
     for (int i = (sz + idx) / 2; i >= 1; i /= 2) {
       tree[i] = tree[2 * i] + tree[2 * i + 1];
     }
   }
-  ll query_driver(int l, int r) {
+  ll q(int l, int r) {
     return query(1, 0, sz-1, l, r); // make sure l and r are 0-based
   }
   // query(1, 0, sz-1, l, r) --> note that lo and hi are all 0-based

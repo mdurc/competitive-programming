@@ -1,3 +1,4 @@
+// returns a.end() if none match
 std::lower_bound(a.begin(), a.end(), 5); // find first element >= 5
 std::upper_bound(a.begin(), a.end(), 5); // find first element > 5
 

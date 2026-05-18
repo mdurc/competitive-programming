@@ -20,6 +20,7 @@ int g(int x) {
 }
 
 // --- segment tree solution
+// 2^19 ==> 524288 > 2*1e5
 const int n = 1 << 20;
 int tree[n * 2][9]; // next pwr of 2, * 2
 void build() {

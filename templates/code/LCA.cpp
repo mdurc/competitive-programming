@@ -1,14 +1,14 @@
 // Assumes 1-based node indexing
 struct LCA {
   int n, MAX_LOG = 20;
-  vector<vector<int>> adj; // adjacency list of the tree
-  vector<vector<int>> up;  // up[v][j] = 2^j-th ancestor of v
-  vector<int> depth;
+  std::vector<std::vector<int>> adj; // adjacency list of the tree
+  std::vector<std::vector<int>> up;  // up[v][j] = 2^j-th ancestor of v
+  std::vector<int> depth;
   LCA(int _n) : n(_n) {
     MAX_LOG = 1;
     while ((1 << MAX_LOG) <= n) ++MAX_LOG;
-    adj.assign(n + 1, vector<int>());
-    up.assign(n + 1, vector<int>(MAX_LOG, 0));
+    adj.assign(n + 1, std::vector<int>());
+    up.assign(n + 1, std::vector<int>(MAX_LOG, 0));
     depth.assign(n + 1, 0);
   }
   void add_edge(int u, int v) { adj[u].push_back(v); adj[v].push_back(u); }
@@ -43,7 +43,7 @@ struct LCA {
     return a;
   }
   int get_lca(int a, int b) {
-    if (depth[a] < depth[b]) swap(a, b);
+    if (depth[a] < depth[b]) std::swap(a, b);
     int diff = depth[a] - depth[b];
     // lift a to same depth as b
     a = kth_ancestor(a, diff);
