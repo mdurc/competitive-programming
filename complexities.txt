@@ -1,0 +1,18 @@
+4 bytes: ~2.1 * 10^9
+8 bytes: ~9.2 * 10^18
+
+256 MB memory limit
+* ~ 6.4e7 32-bit ints
+* ~ 3.2e7 64-bit longs
+
+Around 1e8 operations per second
+n <= 1e18       | O(log n) or O(1)       | math, binary search, matrix exponentiation
+n <= 1e9        | O(log n) or O(sqrt(n)) | divisors, primes
+5e5 <= n <= 1e6 | O(n)                   | linear scans, two pointers
+1e5 <= n <= 1e6 | O(n) or O(n log n)     | sorting, segment trees, binary search
+1e3 <= n <= 5e3 | O(n^2)                 | nested loops, dense graph traversal
+n <= 500        | O(n^3)                 | floyd-warshall, matrix multiplication
+n <= 100        | O(n^4)                 |
+n <= 20         | O(2^n)                 |
+n <= 14         | O(3^n)                 |
+n <= 10         | O(n!)                  | std::next_permutation
