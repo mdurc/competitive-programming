@@ -88,7 +88,7 @@ Majority of material coming from [codeforces blogs](https://codeforces.com/catal
     - [x] cross products, point orientation
     - [x] point inside a polygon test
     - [x] convex hull
-    - [ ] closest pair of points (divide and conquer)
+    - ~~[ ] closest pair of points (divide and conquer)~~
 
 - [ ] **search techniques**
     - [ ] meet in the middle (for subsets where $n=40$)
