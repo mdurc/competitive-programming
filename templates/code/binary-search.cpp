@@ -3,7 +3,7 @@ std::lower_bound(a.begin(), a.end(), 5); // find first element >= 5
 std::upper_bound(a.begin(), a.end(), 5); // find first element > 5
 
 // LOWER BOUND
-int l = 1, r = n; // both l and r are in the search space
+int l = 0, r = n-1; // both l and r are in the search space
 while (l < r) {
   int mid = l + (r - l) / 2;
   // finding the FIRST T in: FFFFFTTTTTTT
@@ -16,7 +16,7 @@ while (l < r) {
 return l; // l == r
 
 // Find LAST true
-int l = 1, r = n; // both l and r are in the search space
+int l = 0, r = n-1; // both l and r are in the search space
 while (l < r) {
   int mid = l + (r - l + 1) / 2; // pick right middle element (avoid inf loop)
   // finding the LAST T in: TTTTTTFFFFFF
