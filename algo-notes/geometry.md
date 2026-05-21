@@ -4,7 +4,7 @@
 
 **Terminology:** Often times we consider a point $p$ to act as a vector $\vec{r}$ directed from $0$ to $r$. This is a generalization and makes the most sense in most contexts, thus *point* and *vector* are often used interchangeably.
 
-![[vector-add-sub.png]]
+![[attachments/vector-add-sub.png]]
 
 ### 1. Dot Product
 > Note that the dot (or scalar) product is not often necessary or used within algorithm implementations, but still reveals useful properties
@@ -17,7 +17,7 @@
       - If $P_1 \cdot P_2 > 0$, then the angle between them is acute (< 90°). This means they generally point in the same direction.
       - If $P_1 \cdot P_2 < 0$, then the angle between them is obtuse (> 90°). This means they generally point in opposite directions.
 
-![[dot-product.png]]
+![[attachments/dot-product.png]]
 
 ### 2. Cross Product
 
@@ -34,13 +34,13 @@
   - If $A$ is not $(0,0)$, we must normalize both $B$ and $C$ by subtracting $A$: $(B - A) \times (C - A)$
       - We can treat this normalize & cross computation as `A.triangle(B, C)`
 
-![[cross-product.png]]
+![[attachments/cross-product.png]]
 
 ### 3. Polygons
 
 The **Shoelace Formula** can be used to compute the **area of a polygon**. The sweeping principle is the intuition behind why this formulation works with both concave and convex polygons. Because the cross product incorporates the rotational direction via the sign, different areas are cancelled out.
 
-![[polygon-area.png]]
+![[attachments/polygon-area.png]]
 
 ```cpp
 long long polygon_area_doubled(const std::vector<Point>& poly) {
@@ -61,7 +61,7 @@ long long polygon_area_doubled(const std::vector<Point>& poly) {
 
 To determine if a **point is inside a polygon**, we utilize a similar concept described above (in terms of flipping parity); this time we are tracking the number of segments found in a path instead of area. This is called the **Even-Odd Rule**. If we shoot a ray in any direction and pass through an even number of edges, the point is outside of the polygon, otherwise the point is inside the polygon.
 
-![[point-in-polygon.png]]
+![[attachments/point-in-polygon.png]]
 
 ```cpp
 bool is_inside_polygon(Point P, const std::vector<Point>& poly) {
