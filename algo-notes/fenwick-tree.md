@@ -8,7 +8,7 @@
   - Odd indicies have an LSB of 1, so they are leaf nodes, containing only themselves in their group
   - Even indices vary. `0110` will contain two indices within its group, itself, and the index below it: `[0110, 0101]`
 
-* **Range queries** rely on computing **[prefix-sums](prefix-sum-diff-array.md)** from the structure.
+* **Range queries** rely on computing **[prefix-sums](prefix-sum.md)** from the structure.
   - To compute range-sum, we simply compute the two relevant prefix sums.
 * **Point updates** require updating all indicies that include the target index in their group.
 
@@ -32,7 +32,7 @@ long long query(int l, int r) { return prefix(r) - prefix(l-1); }
 
 ## Fenwick Tree (Range Updates)
 
-- **Supporting range updates** involves the concept from [difference arrays](prefix-sum-diff-array.md).
+- **Supporting range updates** involves the concept from [difference arrays](difference-array.md).
 - If this was an offline problem, we could just use a raw difference array, perform the updates, and then compute the final array via a prefix-sum. If this is an online problem, where updates and queries are interleaved, we could use a modified Fenwick tree to drop the query time from $O(N)$ with prefix-sum to $O(log N)$ with BIT.
 
 ***If we only ever perform Point Queries***, we can slightly modify the implementation to now store a difference array in the underlying $A$ representation. Since we only allow point-queries in this, we can simply return the prefix sum of our difference array which will return the up-to-date target point: $A[\text{idx}]$.
