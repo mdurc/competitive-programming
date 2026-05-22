@@ -36,7 +36,16 @@
 
 ![](attachments/cross-product.png)
 
-### 3. Polygons
+
+### 3. Distance Functions
+
+- A **distance function** computes the distance between two points $(x_1, y_1), (x_2, y_2)$.
+  - **Euclidean distance:** $\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$
+  - **Manhattan distance:** $|x_1 - x_2| + |y_1 - y_2|$
+
+<img src="attachments/distances.png" width="400">
+
+### 4. Polygons
 
 [Pick's Theorem](https://en.wikipedia.org/wiki/Pick%27s_theorem) mathematical way to compute the area of a polygon provided that **all vertices of the polygon have integer coordinates**.
 ```text
@@ -93,7 +102,7 @@ bool is_inside_polygon(Point P, const std::vector<Point>& poly) {
 }
 ```
 
-### 4. Convex Hull
+### 5. Convex Hull
 - The convex hull is the smallest convex polygon enclosing a set of points: **snapping a rubber band around pegs**.
   1. Sort the points to be increasing in X-coordinate
   2. Start building the upper hull by moving left to right. If you ever face a point that will create a "left turn" (breaking the convex shape), we backtrack and remove the previous points until it makes a right turn again.
@@ -131,3 +140,4 @@ std::vector<Point> convex_hull(std::vector<Point> pts, bool keep_collinear = fal
 * https://cp-algorithms.com/geometry/basic-geometry.html
 * https://www.youtube.com/watch?v=G9QTjWtK_TQ
 * https://www.youtube.com/watch?v=GPZ_WlwcEjI
+* https://cses.fi/book/book.pdf
