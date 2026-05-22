@@ -58,14 +58,14 @@ Majority of material coming from [codeforces blogs](https://codeforces.com/catal
         - [ ] dsu on trees/sack (offline subtree queries)
     - [ ] network min/max flow (dinic's algorithm)
 
-- [ ] **data structures**
+- [x] **data structures**
     - [x] disjoint set union (dsu)
     - [x] segment tree
         - [x] point update, range query
         - [x] lazy propogation (range updates)
         - ~~[ ] persistant segment trees (2d queries)~~
     - [x] fenwick trees (simpler than segment tree, but less applicable)
-    - [ ] sparse table (static idempotent range queries i.e. max/min/gcd)
+    - [x] sparse table (static idempotent range queries i.e. max/min/gcd)
 
 - [ ] **strings**
     - [ ] string hashing (double polynomial rolling hash)
