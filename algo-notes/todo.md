@@ -59,12 +59,12 @@ Majority of material coming from [codeforces blogs](https://codeforces.com/catal
     - [ ] network min/max flow (dinic's algorithm)
 
 - [ ] **data structures**
-    - [ ] disjoint set union (dsu)
-    - [ ] segment tree
-        - [ ] point update, range query
-        - [ ] lazy propogation (range updates)
-        - [ ] persistant segment trees (2d queries)
-    - [ ] fenwick trees (simpler than segment tree, but less applicable)
+    - [x] disjoint set union (dsu)
+    - [x] segment tree
+        - [x] point update, range query
+        - [x] lazy propogation (range updates)
+        - ~~[ ] persistant segment trees (2d queries)~~
+    - [x] fenwick trees (simpler than segment tree, but less applicable)
     - [ ] sparse table (static idempotent range queries i.e. max/min/gcd)
 
 - [ ] **strings**

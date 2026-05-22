@@ -176,11 +176,11 @@ bool is_bipartite() {
 // -- More complex structures and algorithms --
 
 struct DSU {
-  vector<int> parent, size;
+  std::vector<int> parent, size;
   DSU(int n) {
     parent.resize(n + 1);
-    size.resize(n + 1, 1);
-    iota(parent.begin(), parent.end(), 0);
+    size.assign(n + 1, 1);
+    std::iota(parent.begin(), parent.end(), 0);
   }
   int find(int u) {
     if (u == parent[u]) return u;
@@ -189,7 +189,7 @@ struct DSU {
   bool merge(int u, int v) {
     u = find(u), v = find(v);
     if (u == v) return false;
-    if (size[u] < size[v]) swap(u, v);
+    if (size[u] < size[v]) std::swap(u, v);
     parent[v] = u;
     size[u] += size[v];
     return true;

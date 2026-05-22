@@ -4,7 +4,7 @@
 
 ### 1. Intuition
 
-* **Problem:** Binary search requires a monotonic (always increasing or always decreasing) search space. If a function increases to a peak and then decreases (or decreases to a valley and then increases), binary search cannot be directly applied to find that peak/valley.
+* **Problem:** [Binary search](binary-search.md) requires a monotonic (always increasing or always decreasing) search space. If a function increases to a peak and then decreases (or decreases to a valley and then increases), binary search cannot be directly applied to find that peak/valley.
 * **Insight:** This type of curve is called a **unimodal function**. It has exactly one extreme point (maximum or minimum). If we pick two points $m_1$ and $m_2$ inside our search space $[l, r]$ such that $l < m_1 < m_2 < r$, we can evaluate $f(m_1)$ and $f(m_2)$.
 * **The Elimination:** Suppose we are looking for a **maximum**.
   * If $f(m_1) < f(m_2)$, the peak cannot be in the left third. Discard the segment $[l, m_1]$ by setting $l = m_1$.
