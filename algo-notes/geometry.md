@@ -38,7 +38,13 @@
 
 ### 3. Polygons
 
-The **Shoelace Formula** can be used to compute the **area of a polygon**. The sweeping principle is the intuition behind why this formulation works with both concave and convex polygons. Because the cross product incorporates the rotational direction via the sign, different areas are cancelled out.
+[Pick's Theorem](https://en.wikipedia.org/wiki/Pick%27s_theorem) mathematical way to compute the area of a polygon provided that **all vertices of the polygon have integer coordinates**.
+```text
+area = interior + (boundary/2) - 1
+```
+<img src="attachments/picks-theorem.png" width="200">
+
+The **Shoelace Formula** can be used to compute the **area of a polygon** in a more geometric approach. The sweeping principle is the intuition behind why this formulation works with both concave and convex polygons. Because the cross product incorporates the rotational direction via the sign, different areas are cancelled out.
 
 ![](attachments/polygon-area.png)
 
