@@ -78,11 +78,11 @@ Majority of material coming from [codeforces blogs](https://codeforces.com/catal
     - [ ] subsets, masking, xor tricks
     - [ ] builtin popcount functions
 
-- [ ] **game theory**
-    - [ ] vocabulary
-    - [ ] nim game basics
-    - [ ] grundy numbers
-    - [ ] sprague-grundy
+- [x] **game theory**
+    - [x] vocabulary
+    - [x] nim game basics
+    - [x] grundy numbers
+    - [x] sprague-grundy
 
 - [x] **geometry**
     - [x] cross products, point orientation

@@ -2,13 +2,18 @@
 
 > **TL;DR:** Answers range queries (sum, min, max) and handles individual point updates, both in $O(\log N)$ time.
 
-### 1. Intuition
+* Using a standard array allows point updates in $O(1)$ time and range queries in $O(N)$ time.
+* Using a [prefix sum](prefix-sum.md) allows point updates in $O(N)$ time and range queries in $O(1)$ time.
 
-* **Problem:** A standard array handles point updates in $O(1)$ time, but range queries take $O(N)$ time. A prefix sum array handles range queries in $O(1)$ time, but updating a single point takes $O(N)$ time because you must rebuild the prefix array.
-* **Insight:** We can build a binary tree *over* the array. The root node stores the answer for the entire array $[0, N-1]$. The root's left child stores the left half, and the right child stores the right half, dividing recursively until the leaves store individual elements.
-* **Operation:** When you query a range, the tree pieces together $O(\log N)$ precomputed segments that perfectly cover your query range. When you update a single point, you only need to update the specific leaf and then recalculate the $O(\log N)$ ancestor nodes directly above it on the path back to the root.
+- Segment trees can perform both operations in $O(\log N)$ time.
+    - We can build a binary tree over the target array.
+    - The root node stores the range-answer for the entire array $[0, N-1]$. The root's left child stores the left half, and the right child stores the right half, dividing recursively until the leaves store individual elements. 
 
-### 2. Implementation
+* **Operations (query/update):**
+  * When you **query a range**, we traverse through the tree and add together nodes that represent a range of values that are completely covered within the target range in the query. Sometimes this will mean using a leaf node, other times, it will be the internal nodes.
+  * When you **update a single point**, you only need to update the specific leaf and then recalculate the $O(\log N)$ ancestor nodes directly above it on the path back to the root.
+
+### Implementation
 
 - The **tree size** must be at least 2 times the nearest power of 2 greater than `mxn`. Often times you will see `int tree[4 * mxn];` which is sufficient but sometimes extra memory.
 - The **recursive** implementation is much more versitile and easier to work with when writing specific variations of a segment tree. The iterative implementation for `change()` as shown below is quicker to write.

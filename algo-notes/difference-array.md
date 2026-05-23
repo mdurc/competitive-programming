@@ -1,8 +1,7 @@
 ## Difference Arrays
 
 > **TL;DR:** Inverse of [prefix sums](prefix-sum.md), allowing $O(1)$ range updates offline, applying them all in a single $O(N)$ pass at the end.
-> If we are solving an **online** problem where we have to interleave queries and updates, you must use a [lazy segment tree](segment-tree.md) or [fenwick tree](fenwick-tree.md)
-* **Note:** This strictly only works for **offline** problems (where you can process all updates before you need to answer any queries about the elements). If queries and updates are interleaved, you must use a Lazy Segment Tree or a Fenwick Tree.
+> **Note:** If we are solving an **online** problem where we have to interleave queries and updates, you must use a [lazy segment tree](segment-tree.md) or [fenwick tree](fenwick-tree.md)
 
 - Given an array, you can process, in $O(1)$ time, queries in the form of:
   - Add a value $V$ to all elements in the range $[l,r]$

@@ -2,12 +2,20 @@
 
 > **TL;DR:** Locates elements or decision boundaries in a monotonic (ordered) search space in $O(\log N)$ time. Generally transforms an optimization problem into a "yes/no" decision problem.
 
-### 1. Intuition
-* **Problem:** A linear scan will take $O(N)$ time. Much too slow for a large search space ($10^9$ or $10^18$).
-* **Insight:** If a search space is **monotonic**, we can eliminate half of the remaining possibilities at every step. Monotonicity means the condition we are checking looks like a sequence of `false` followed by `true` (`FFFFFTTTTT`), or vice-versa (`TTTTTFFFFF`). This often comes in the form of requiring the input array to be **sorted**.
-* **Binary Search on Answer (BSTA):** Instead of searching for a value in an array, we binary search over the *possible range of answers*. If the problem asks to "maximize the minimum" or "minimize the maximum", we guess an answer `mid`, and write a greedy/ad-hoc checker function `cond(mid)` to see if `mid` is achievable.
+* A linear scan will take $O(N)$ time. Too slow for $N \ge 10^9$.
 
-### 2. Implementation
+- If a search space is **monotonic** it means that a sequence of values or conditions move strictly in one direction without ever reversing.
+  - *Monotonically increasing:* values only go up or the same: $1, 2, 2, 4, 7$
+  - *Monotonically decreasing:* values only go down or the same: $7, 4, 2, 2, 1$
+- Monotonic search spaces allow us to eliminate half of the remaining possibilities at every step.
+  - This allows us to perform queries at $O(\log N)$ time.
+- This is the traditional binary search implementation (locate a value within a sorted array), however it can be generalized into BSTA.
+
+* **Binary Search on Answer (BSTA):** instead of searching for a value, we search over the *range of possible answers* to our problem. If the problem asks to "maximize the minimum" or "minimize the maximum", we guess an answer `mid`, and write a greedy/ad-hoc checker function `cond(mid)` to see if `mid` is achievable.
+  - This condition evaluation function transforms the problem into a monotonic boolean search space `[T T T F F]` or `[F F F T T]`, allowing us to binary search the boundary where the condition flips.
+
+
+### Implementation
 **Standard library functions:**
 ```cpp
 // both lower_bound and upper_bound return an iterator; a.end() if no element is found
@@ -46,6 +54,6 @@ while (l < r) {
 return l; // l == r
 ```
 
-### 3. Resources
+### Resources
 * https://leetcode.com/discuss/post/786126/python-powerful-ultimate-binary-search-t-rwv8/
 * https://www.youtube.com/watch?v=GU7DpgHINWQ

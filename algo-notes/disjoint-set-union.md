@@ -2,15 +2,24 @@
 
 > **TL;DR:** Tracks connected components in a forest/graph and allows fast merging of sets/subtrees.
 
-### 1. Structure and Implementation Optimizations
+### Structure
 
-* **Problem:** If you use an array to track which component each node belongs to, checking if two nodes are connected is $O(1)$, but merging two components requires an $O(N)$ sweep to update the IDs. If you use standard DFS/BFS to check connectivity, each query is $O(N)$.
-* **Insight:** Instead of flattening the components, represent them as a collection of trees. Each node points to a "parent". The root of the tree is the "representative" of the component.
-* **Optimizations:**
+![](attachments/dsu.png)
+
+* Allows for fast query and updates: $O(\alpha (N))$, which is the **inverse Ackermann**, practically constant $O(1)$ time.
+
+* We initally represent each element as its own tree.
+* Each node points to a "parent".
+* The root of each tree is the "representative" of that particular component.
+  - When we query for what group a given node is on, we return whatever the topmost parent node is.
+
+- **Optimizations:**
   1. **Path Compression:** When you walk up the tree to find the root, redirect every node on that path to point directly to the root. This flattens the tree dynamically.
   2. **Union by Size:** When merging two roots, always attach the smaller tree to the root of the larger tree. This guarantees the tree depth never exceeds $\log N$.
 
 * **Usage:** this data structure is used to create the forest in [Kruskals MST algorithm](kruskals.md).
+
+### Implementation
 
 ```cpp
 const int mxn = 2e5 + 5;
