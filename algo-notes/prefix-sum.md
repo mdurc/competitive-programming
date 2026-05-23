@@ -34,7 +34,7 @@ int query(int l, int r) { return p[r] - (l > 0 ? p[l-1]: 0); }
 * We want to find the sum of elements within a rectangle of a 2D grid.
 * The prefix array $P[i][j]$ now represents the sum of elements in the rectangle $(0,0)$ to $(i,j)$.
   - Note that it is much cleaner to write this solution with one-based indexing to avoid extra out-of-bounds checks.
-* We then utilize the (Inclusion-Exclusion principle)[combinatorics.md] for both construction and queries.
+* We then utilize the [Inclusion-Exclusion principle](combinatorics.md) for both construction and queries.
 
 ![](attachments/2d-prefix-array.png)
 

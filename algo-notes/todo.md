@@ -8,12 +8,12 @@ Majority of material coming from [codeforces blogs](https://codeforces.com/catal
     - [x] variable vs. fixed-length windows
     - [x] subarrays with exactly/at most $k$ distinct elements
 
-- [ ] **arrays & offline queries**
-    - [ ] prefix sums (1D and 2D)
-    - [ ] difference arrays
-    - [ ] coordinate compression (needed for fenwick/segment trees when values are up to $10^9$)
-    - [ ] line sweep (intervals)
-    - [ ] mo's algorithm (standard square-root decomposition for offline range queries)
+- [x] **arrays & offline queries**
+    - [x] prefix sums (1D and 2D)
+    - [x] difference arrays
+    - [x] coordinate compression (needed for fenwick/segment trees when values are up to $10^9$)
+    - [x] line sweep (intervals)
+    - [x] mo's algorithm (standard square-root decomposition for offline range queries)
 
 - [ ] **math & number theory**
     - [ ] modular arithmetic & modular inverse
@@ -42,15 +42,18 @@ Majority of material coming from [codeforces blogs](https://codeforces.com/catal
     - [ ] convex hull trick
 
 - [ ] **graphs & trees**
+    - [ ] basic graph terminology/representations
+        - [ ] cycle detection
     - [ ] bfs/dfs
         - [ ] 0-1 BFS (deque for graphs with edge weights of only 0 and 1)
-    - [ ] shortest path (dikjstra, floyd, bellman-ford)
+    - [ ] shortest paths (dikjstra, floyd, bellman-ford)
         - [ ] multi-source versions
     - [ ] SCC (kosaraju's)
+        - [ ] 2-SAT (via SCCs)
     - [ ] bridges and articulation points
-    - [ ] 2-SAT (via SCCs)
     - [ ] eulerian path/circuit, hamiltonian path
-    - [ ] topological ordering (kahn)
+    - [ ] directed acyclic graphs
+        - [ ] topological ordering
     - [ ] bipartite check / graph coloring
     - [ ] trees
         - [ ] binary lifting (lowest common ancestor)
@@ -69,9 +72,8 @@ Majority of material coming from [codeforces blogs](https://codeforces.com/catal
 
 - [ ] **strings**
     - [ ] string hashing (double polynomial rolling hash)
-    - [ ] Z function/algorithm
-    - [ ] trie (prefix tree)
     - [ ] suffix array
+    - [ ] trie (prefix tree)
     - [ ] Aho–Corasick (multiple pattern matching)
 
 - [x] **bit manipulation**
@@ -91,5 +93,9 @@ Majority of material coming from [codeforces blogs](https://codeforces.com/catal
     - ~~[ ] closest pair of points (divide and conquer)~~
 
 - [ ] **search techniques**
-    - [ ] meet in the middle (for subsets where $n=40$)
+    - [ ] subsets and permutations
     - [ ] backtracking and pruning
+    - [ ] meet in the middle (for subsets where $n=40$)
+
+- [ ] Master theorem and Big-O
+    - [ ] Merge sort example
