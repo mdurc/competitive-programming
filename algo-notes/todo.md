@@ -74,9 +74,9 @@ Majority of material coming from [codeforces blogs](https://codeforces.com/catal
     - [ ] suffix array
     - [ ] Aho–Corasick (multiple pattern matching)
 
-- [ ] **bit manipulation**
-    - [ ] subsets, masking, xor tricks
-    - [ ] builtin popcount functions
+- [x] **bit manipulation**
+    - [x] subsets, masking, xor tricks
+    - [x] builtin popcount functions
 
 - [x] **game theory**
     - [x] vocabulary
