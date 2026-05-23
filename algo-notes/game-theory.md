@@ -22,7 +22,7 @@ $\text{Nim-sum} = G = p_1 \oplus p_2 \oplus \dots \oplus p_n$
 
 ### 3. Deriving the Nim-sum, XOR operator
 
-- **What is the Nim-sum/Nim-value**
+- **What is the Nim-sum/Nim-value?**
   - For each game state, $G$ will represent the Nim-sum that determines if this is a winning or losing state for the current player.
   - Given two game states, $a$, and $b$ with Nim-sums $A$ and $B$ respectively, let $a + b$ be the game state where simply all the piles of $a$ are placed next to all of the piles of $b$.
   - $A \diamond B$ will be the Nim-sum of the game state $a + b$.

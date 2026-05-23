@@ -7,7 +7,7 @@
 ![](attachments/vector-add-sub.png)
 
 ### 1. Dot Product
-> Note that the dot (or scalar) product is not often necessary or used within algorithm implementations, but still reveals useful properties
+> Note that the dot (or scalar) product is not often necessary or used within algorithm implementations, but still reveals useful properties.
 - Let $P_1 = (x_1, y_1)$ and $P_2 = (x_2, y_2)$.
 - **Algebriac Definition:** $P_1 \cdot P_2 = x_1 x_2 + y_1 y_2$
 - **Geometric Definition:** $P_1 \cdot P_2 = |P_1| |P_2| \cos(\theta)$
@@ -25,10 +25,10 @@
 - Using $(0,0)$ as the reference origin, the cross-product equation of vectors $\vec{P_1}$ and $\vec{P_2}$ is: $P_1 \times P_2 = x_1 y_2 - x_2 y_1$
   1. **Area:** the absolute value $|P_1 \times P_2|$ yields 2x the area of the triangle formed by $(0,0), P_1, P_2$.
   2. **Orientation:** the sign indicates which point ($P_1$ or $P_2$) is more left of the other from the perspective of the reference point.
-      - *The interpretation of the sign comes from the slopes that each vector has, where a greater slope will be further left than a smaller slope (assuming the vectors are in the first quadrant... see image below)*
+      - *The interpretation of the sign comes from the slopes that each vector has, where a greater slope will be further left than a smaller slope (assuming the vectors are in the first quadrant... see image below).*
       - If $P_1 \times P_2 < 0$, then $P_1$ is more left from $P_2$
       - If $P_1 \times P_2 > 0$, then $P_1$ is more right from $P_2$
-      - If $P_1 \times P_2 = 0$, then the two vectors are colinear (parallel)
+      - If $P_1 \times P_2 = 0$, then the two vectors are colinear (parallel).
 - **Arbitrary Origins:** when considering a reference point that is not the origin, a cross product involves 3 points: $A$, $B$, and $C$. We treat point $A$ as the origin.
   - If $A$ is $(0,0)$, we know: $B \times C = B.x * C.y - C.x * B.y$
   - If $A$ is not $(0,0)$, we must normalize both $B$ and $C$ by subtracting $A$: $(B - A) \times (C - A)$
@@ -104,7 +104,7 @@ bool is_inside_polygon(Point P, const std::vector<Point>& poly) {
 
 ### 5. Convex Hull
 - The convex hull is the smallest convex polygon enclosing a set of points: **snapping a rubber band around pegs**.
-  1. Sort the points to be increasing in X-coordinate
+  1. Sort the points to be increasing in X-coordinate.
   2. Start building the upper hull by moving left to right. If you ever face a point that will create a "left turn" (breaking the convex shape), we backtrack and remove the previous points until it makes a right turn again.
   3. Start building the lower hull by reversing the order of points so that we can move through the set right to left. Logic remains the same as in the upper hull construction.
 

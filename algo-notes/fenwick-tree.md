@@ -5,7 +5,7 @@
 
 - Each index is responsible for the range specified by its LSB.
   - LSB dictates the number of indices (moving downwards/current + previous indices) this index represents in its group.
-  - Odd indicies have an LSB of 1, so they are leaf nodes, containing only themselves in their group
+  - Odd indicies have an LSB of 1, so they are leaf nodes, containing only themselves in their group.
   - Even indices vary. `0110` will contain two indices within its group, itself, and the index below it: `[0110, 0101]`
 
 * **Range queries** rely on computing **[prefix-sums](prefix-sum.md)** from the structure.

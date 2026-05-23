@@ -82,13 +82,13 @@ long long query(int node, int node_lo, int node_hi, int l, int r) {
 * **Main idea:** traverse to a parent node that is fully-contained by the target range, apply the changes once to this parent node, and then *defer the changes for its children until necessary*.
 
 - **Each node will contain:**
-  1. Aggregate value: sum/min/max of its range
-  2. Lazy-tag: pending update (with some semantic effect) for its children
-  3. State flag: easily check if a lazy-tag is present
-- **Push Operation:** whenever we visit a node (while querying or updating), we must resolve any pending tags before interacting with its children
-  1. Apply tag's effects to left/right children
-  2. Accumulate the tag onto each child's existing lazy-tag(s)
-  3. Clear current node's lazy-tag
+  1. Aggregate value: sum/min/max of its range.
+  2. Lazy-tag: pending update (with some semantic effect) for its children.
+  3. State flag: easily check if a lazy-tag is present.
+- **Push Operation:** whenever we visit a node (while querying or updating), we must resolve any pending tags before interacting with its children.
+  1. Apply tag's effects to left/right children.
+  2. Accumulate the tag onto each child's existing lazy-tag(s).
+  3. Clear current node's lazy-tag.
 
 *Example: Range Addition Update, Range Sum Query.*
 
