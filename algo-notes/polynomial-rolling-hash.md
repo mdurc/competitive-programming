@@ -51,6 +51,10 @@ $$H(l, r) = \left(H[r] - H[l-1] \cdot P^{r-l+1} \right) \pmod M$$
     - $H(2, 4) = H[4] - (1 \cdot 5^4 + 2 \cdot 5^3) = 3 \cdot 5^2 + 4 \cdot 5^1 + 5 \cdot 5^0$
     - $H(2, 4) = 3(25) + 4(5) + 5(1) = 100$
 
+- **To precompute the powers of $P$:**:
+  - $p[0] = 1$
+  - $p[i] = p[i-1] \cdot P$
+
 ### Implementation 1: Educational Approach
 
 This approach is more readable and more intuitive based on the logic we have discussed. See [modular arithmetic notes](modular-arithmetic.md) to understand how we safely perform modulo operations on addition and subtraction.
@@ -75,17 +79,17 @@ long long compute_hash() {
   // forward hashes: s[0]*p^n + s[1]*p^(n-1) + s[2]*p^(n-2) .. mod m
   hash_f[0] = hash_r[n] = 0;
   for (int i = 0; i < n; ++i) {
-    hash_f[i + 1] = ((hash_f[i] * P1)%M1 + (s[i]-'a'+1)) % M1;
+    hash_f[i + 1] = ((hash_f[i] * P1)%M1 + s[i]) % M1;
   }
   for (int i = n - 1; i >= 0; --i) {
-    hash_r[i] = ((hash_r[i + 1] * P1)%M1 + (s[i]-'a'+1)) % M1;
+    hash_r[i] = ((hash_r[i + 1] * P1)%M1 + s[i]) % M1;
   }
   return hash_f[n]; // full string hash
 }
 long long change_char(long long h1, int pos, char newc, char oldc) {
   // Each character contributes [char_value * P^(n-pos-1)]
   long long exp = pow_p1[n-pos-1];
-  return ((h1 - ((oldc-'a'+1) * exp)%M1 + ((newc-'a'+1) * exp)%M1) + M1) % M1;
+  return ((h1 - (oldc * exp)%M1 + (newc * exp)%M1) + M1) % M1;
 }
 long long get(int l, int r, bool get_fwd = true) { // 0-based indexing
   long long fwd = ((hash_f[r+1] - (hash_f[l] * pow_p1[r-l+1])%M1) + M1) % M1;
@@ -94,6 +98,54 @@ long long get(int l, int r, bool get_fwd = true) { // 0-based indexing
 }
 ```
 
+**As described in more detail below, a single-hash approach is often not sufficient due to the number of collisions that can occur. String hashing is often implemented as double-polynomial hash instead**
+The implementation is largely the same, but simply tracking another hash-prefix-sum for each computation. Then, instead of returning a single hash-value, we return a pair of hash-values. Two strings will have the same hash if both hash-values are identical.
+```cpp
+const int P1 = 31, P2 = 37; // 131
+const int M1 = 1e9 + 7, M2 = 1e9 + 9;
+const int mxn = 1e6 + 5;
+string s; int n;
+long long h_f1[mxn], h_f2[mxn]; // forward hashes
+long long h_r1[mxn], h_r2[mxn]; // reverse hashes
+long long p1[mxn], p2[mxn];     // precomputed powers
+void precompute() {
+  p1[0] = p2[0] = 1;
+  for (int i = 1; i < mxn; ++i) {
+    p1[i] = (p1[i-1] * P1) % M1;
+    p2[i] = (p2[i-1] * P2) % M2;
+  }
+}
+std::pair<long long, long long> compute_hash() {
+  h_f1[0] = h_f2[0] = h_r1[n] = h_r2[n] = 0;
+  for (int i = 0; i < n; ++i) {
+    h_f1[i + 1] = ((h_f1[i] * P1)%M1 + s[i]) % M1;
+    h_f2[i + 1] = ((h_f2[i] * P2)%M2 + s[i]) % M2;
+  }
+  for (int i = n - 1; i >= 0; --i) {
+    h_r1[i] = ((h_r1[i + 1] * P1)%M1 + s[i]) % M1;
+    h_r2[i] = ((h_r2[i + 1] * P2)%M2 + s[i]) % M2;
+  }
+  return std::make_pair(h_f1[n], h_f2[n]);
+}
+std::pair<long long, long long> change_char(std::pair<long long, long long> h, int pos, char newc, char oldc) {
+  long long e1 = p1[n-pos-1];
+  long long e2 = p2[n-pos-1];
+  long long hash1 = ((h.first - (oldc * e1)%M1 + (newc * e1)%M1) + M1) % M1;
+  long long hash2 = ((h.second - (oldc * e2)%M2 + (newc * e2)%M2) + M2) % M2;
+  return std::make_pair(hash1, hash2);
+}
+std::pair<long long, long long> get(int l, int r, bool get_fwd = true) { // 0-based indexing
+  long long hash1, hash2;
+  if (get_fwd) {
+    hash1 = ((h_f1[r+1] - (h_f1[l] * p1[r-l+1])%M1) + M1) % M1;
+    hash2 = ((h_f2[r+1] - (h_f2[l] * p2[r-l+1])%M2) + M2) % M2;
+  } else {
+    hash1 = ((h_r1[l] - (h_r1[r+1] * p1[r-l+1])%M1) + M1) % M1;
+    hash2 = ((h_r2[l] - (h_r2[r+1] * p2[r-l+1])%M2) + M2) % M2;
+  }
+  return std::make_pair(hash1, hash2);
+}
+```
 
 ### Implementation 2: Template
 
@@ -136,7 +188,7 @@ struct HashInterval {
   }
   H change_char(H h1, int pos, char newc, char oldc) {
     // each character contributes [char_value * P^(n-pos-1)]
-    return h1 - pow[n-pos-1] * (oldc-'a'+1) + pow[n-pos-1] * (newc-'a'+1);
+    return h1 - pow[n-pos-1] * oldc + pow[n-pos-1] * newc;
   }
 };
 

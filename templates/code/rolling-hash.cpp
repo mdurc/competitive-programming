@@ -37,7 +37,7 @@ struct HashInterval {
   }
   H change_char(H h1, int pos, char newc, char oldc) {
     // each character contributes [char_value * P^(n-pos-1)]
-    return h1 - pow[n-pos-1] * (oldc-'a'+1) + pow[n-pos-1] * (newc-'a'+1);
+    return h1 - pow[n-pos-1] * oldc + pow[n-pos-1] * newc;
   }
 };
 
