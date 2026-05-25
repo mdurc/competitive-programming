@@ -70,9 +70,10 @@ Majority of material coming from [codeforces blogs](https://codeforces.com/catal
     - [x] fenwick trees (simpler than segment tree, but less applicable)
     - [x] sparse table (static idempotent range queries i.e. max/min/gcd)
 
-- [ ] **strings**
-    - [ ] string hashing (double polynomial rolling hash)
-    - [ ] suffix array
+- [x] **strings**
+    - [x] string hashing (double polynomial rolling hash)
+    - [x] suffix array
+    - [ ] Z-Algorithm
     - [ ] trie (prefix tree)
     - [ ] Aho–Corasick (multiple pattern matching)
 
