@@ -1,6 +1,6 @@
 ## Line Sweep (Intervals)
 
-> **TL;DR:** Solves interval and geometric problems by moving a conceptual line across an axis, processing "events" at specific coordinates. Converts $O(N^2)$ interval intersection checks into an $O(N \log N)$ sort for preprocessing and a single $O(N)$ pass.
+> **TL;DR:** Solves [interval](two-pointers.md) and [geometric](geometry.md) problems by moving a conceptual line across an axis, processing "events" at specific coordinates. Converts $O(N^2)$ interval intersection checks into an $O(N \log N)$ sort for preprocessing and a single $O(N)$ pass.
 
 * For queries such as: "maximum number of overlapping intervals at any point" or "total length of the union of intervals".
 * Instead of checking every point or every pair of intervals, we only care about the coordinates where the state *changes*.

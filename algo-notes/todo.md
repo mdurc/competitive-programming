@@ -13,36 +13,34 @@
     - [x] line sweep (intervals)
     - [x] mo's algorithm (standard square-root decomposition for offline range queries)
 
-- [ ] **math & number theory**
+- [x] **math & number theory**
     - Focus: what theorems/axioms are true; how can we use them in programming? Knowing what situations to be able to use a given property is just as important as knowing the property, especially in competitive programming.
-    - [ ] modular arithmetic & modular inverse
-    - [ ] number theory
-        - [ ] primes, factors, factorization
-            - [ ] prime divisor composition
-            - [ ] standard sieve of eratosthenes
-        - [ ] extended euclidean algorithm
-            - [ ] gcd/lcm
-            - [ ] divisors
-        - [ ] Euler's theorem
-        - [ ] Euler's totient function
-        - [ ] binary exponentiation
-            - [ ] matrix exponentiation (for O(log n) linear recurrences i.e. fibonacci)
-    - [ ] combinatorics
-        - [ ] binomial coefficients
-        - [ ] catalan numbers
-        - [ ] inclusion-exclusion
-        - [ ] burnside's lemma
-        - [ ] cayley's formula
-        - [ ] factorials and inverses
-        - [ ] combinations vs permutations
-    - [ ] matrices
-        - [ ] matrix operations
-        - [ ] linear recurrences
-        - [ ] graphs and matrices
-        - [ ] gaussian elimination
-    - [ ] probability
-        - [ ] random variables
-        - [ ] expected value
+    - [x] modular arithmetic & modular inverse
+        - [x] binary exponentiation
+    - [x] number theory
+        - [x] primes, factors, factorization
+            - [x] prime divisor composition
+            - [x] standard sieve of eratosthenes
+        - [x] extended euclidean algorithm
+            - [x] gcd/lcm
+            - [x] divisors
+        - [x] Euler's theorem
+        - [x] Euler's totient function
+    - [x] combinatorics
+        - [x] binomial coefficients
+        - [x] catalan numbers
+        - [x] inclusion-exclusion
+        - [x] burnside's lemma
+        - [x] cayley's formula
+        - [x] factorials and inverses
+        - [x] combinations vs permutations
+    - [x] probability
+        - [x] random variables
+        - [x] expected value
+    - [x] matrices
+        - [x] matrix operations
+        - [x] linear recurrences
+        - [x] graphs and matrices
 
 - [ ] **graphs & trees**
     - [ ] basic graph terminology/representations
@@ -120,3 +118,4 @@
     - [ ] meet in the middle (for subsets where $n=40$)
     - [ ] persistant segment trees (2d queries)
     - [ ] closest pair of points (divide and conquer)
+    - [ ] gaussian elimination
