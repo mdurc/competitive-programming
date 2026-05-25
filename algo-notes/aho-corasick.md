@@ -74,20 +74,18 @@ void build() {
   }
 }
 
-// mirror to KMP algorithm
+// standard trie search
 void search(const std::string& text) {
-  int tsz = (int)text.size();
-  int l = 0, r = 0;
-  while (r < tsz) {
-    int v = text[r] - 'a';
-    l = tree[l][v];
-    int match_state = term[l];
+  int u = 0, n = (int)text.size();
+  for (int i = 0; i < n; ++i) {
+    int v = text[i] - 'a';
+    u = tree[u][v];
+    int match_state = term[u]; // retrieve all overlapping output links
     while (match_state != 0) {
-      // pattern pid[match_state] found at text[r]
-
-      match_state = term[fail[match_state]]; // find chained outputs
+      // found pid[match_state] ending at text index i
+        std::cout << pid[match_state] << " ending at " << i << "\n";
+      match_state = term[fail[match_state]];
     }
-    ++r;
   }
 }
 ```

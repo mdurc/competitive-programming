@@ -73,21 +73,20 @@ struct AhoCorasick {
     }
   }
 
-  std::vector<std::pair<int, int>> search(const std::string& text) {
+  void search(const std::string& text) {
     int u = 0;
     int n = (int)text.size();
-    std::vector<std::pair<int, int>> res;
     for (int i = 0; i < n; ++i) {
       int idx = text[i] - 'a';
       u = trie[u].next[idx]; // bfs handles fail-links
       int curr = u;
       while (curr != 0) { // fail-link = 0 for root
         for (int pattern_id : trie[curr].matches) {
-          // res.emplace_back(pattern_id, i - pattern_lengths[pattern_id] + 1);
+          // found pattern_id ending at text index i
+          std::cout << pattern_id << " ending at " << i << "\n";
         }
         curr = trie[curr].out;
       }
     }
-    return res;
   }
 };
