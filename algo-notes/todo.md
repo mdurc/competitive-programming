@@ -73,7 +73,7 @@ Majority of material coming from [codeforces blogs](https://codeforces.com/catal
 - [x] **strings**
     - [x] string hashing (double polynomial rolling hash)
     - [x] suffix array
-    - [ ] Z-Algorithm
+    - [x] Z-Algorithm
     - [ ] trie (prefix tree)
     - [ ] Aho–Corasick (multiple pattern matching)
 
@@ -93,10 +93,11 @@ Majority of material coming from [codeforces blogs](https://codeforces.com/catal
     - [x] convex hull
     - ~~[ ] closest pair of points (divide and conquer)~~
 
+- [ ] **Master theorem and Big-O**
+
+- [ ] **Linear Programming**
+
 - [ ] **search techniques**
     - [ ] subsets and permutations
     - [ ] backtracking and pruning
     - [ ] meet in the middle (for subsets where $n=40$)
-
-- [ ] Master theorem and Big-O
-    - [ ] Merge sort example
