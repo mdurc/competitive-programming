@@ -23,6 +23,11 @@
 ```
 *Notice how `"app"` ends on the second 'p', which is marked as an `end` node, but the path continues downward to finish `"apple"`.*
 
+**A trie can also be interpretted as a finite state automaton:**
+
+<img src="attachments/trie-image.png" width="400">
+
+
 ### Array-based Implementation
 
 ```cpp
@@ -52,3 +57,11 @@ bool search(const std::string& s) {
   return is_end[u];
 }
 ```
+
+### Struct-based Implementation
+
+See the template: [trie.cpp](../templates/code/trie.cpp)
+
+### Resources
+* image from: https://cp-algorithms.com/string/aho_corasick.html
+    * "The image by [nd](https://de.wikipedia.org/wiki/Benutzer:Nd) is distributed under CC BY-SA 3.0 license."

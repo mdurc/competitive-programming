@@ -1,20 +1,27 @@
 #include <bits/stdc++.h>
 
 struct Trie {
-  char base = 'a';
   struct Node {
     int next[26];
     bool is_end;
     int count;
-    Node() : is_end(false), count(0) { std::fill(next, next + 26, -1); }
+
+    Node() {
+      std::fill(next, next + 26, -1);
+      is_end = 0;
+      count = 0;
+    }
   };
+
   std::vector<Node> tree;
+
   Trie() { tree.emplace_back(); }
+
   void insert(const std::string& s) {
     int p = 0;
     tree[p].count++;
     for (char c : s) {
-      int idx = c - base;
+      int idx = c - 'a';
       if (tree[p].next[idx] == -1) {
         tree[p].next[idx] = tree.size();
         tree.emplace_back();
@@ -24,19 +31,21 @@ struct Trie {
     }
     tree[p].is_end = true;
   }
+
   bool search(const std::string& s) {
     int p = 0;
     for (char c : s) {
-      int idx = c - base;
+      int idx = c - 'a';
       if (tree[p].next[idx] == -1) return false;
       p = tree[p].next[idx];
     }
     return tree[p].is_end;
   }
+
   bool startsWith(const std::string& s) {
     int p = 0;
     for (char c : s) {
-      int idx = c - base;
+      int idx = c - 'a';
       if (tree[p].next[idx] == -1) return false;
       p = tree[p].next[idx];
     }
