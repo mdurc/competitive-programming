@@ -66,7 +66,6 @@ Majority of material coming from [codeforces blogs](https://codeforces.com/catal
     - [x] segment tree
         - [x] point update, range query
         - [x] lazy propogation (range updates)
-        - ~~[ ] persistant segment trees (2d queries)~~
     - [x] fenwick trees (simpler than segment tree, but less applicable)
     - [x] sparse table (static idempotent range queries i.e. max/min/gcd)
 
@@ -75,6 +74,7 @@ Majority of material coming from [codeforces blogs](https://codeforces.com/catal
     - [x] suffix array
     - [x] Z-Algorithm
     - [x] trie (prefix tree)
+    - [x] prefix function & kmp
     - [ ] Aho–Corasick (multiple pattern matching)
 
 - [x] **bit manipulation**
@@ -91,13 +91,14 @@ Majority of material coming from [codeforces blogs](https://codeforces.com/catal
     - [x] cross products, point orientation
     - [x] point inside a polygon test
     - [x] convex hull
-    - ~~[ ] closest pair of points (divide and conquer)~~
 
-- [ ] **Master theorem and Big-O**
+- [x] **Master theorem and Big-O**
 
-- [ ] **Linear Programming**
-
-- [ ] **search techniques**
+- [ ] **Advanced techniques**
     - [ ] subsets and permutations
     - [ ] backtracking and pruning
     - [ ] meet in the middle (for subsets where $n=40$)
+    - [ ] persistant segment trees (2d queries)
+    - [ ] closest pair of points (divide and conquer)
+    - [ ] Centroid Decomposition
+    - [ ] Heavy-light decomposition

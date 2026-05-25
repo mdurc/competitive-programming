@@ -8,7 +8,7 @@
     - `Z[i]` = longest common prefix between `S[0..N-1]` and `S[i..N-1]`.
     - `Z[0]` indicates `S[0] != S[i]`
 
-- **Technique:**
+- **Technique ([two pointers](two-pointers.md)):**
     - Maintain an interval `[L, R]` such that `S[L..R]` is the rightmost substring that is also a prefix `S[0..R-L]`.
     - Given `[L, R]` and all Z-values up to `i-1`, we can compute `Z[i]` and the new `[L, R]`.
 
@@ -52,7 +52,7 @@ std::vector<int> z_function(const std::string& s) {
   return z;
 }
 
-// pattern matching with z_function:
+// return indices of text that start a substring that matches pattern
 std::vector<int> z_patterns(const std::string& pattern, const std::string& text) {
   std::vector<int> res;
   std::vector<int> z = z_function(pattern + "$" + text);
