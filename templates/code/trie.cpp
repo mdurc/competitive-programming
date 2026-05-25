@@ -1,35 +1,39 @@
+#include <bits/stdc++.h>
+
 struct Trie {
   char base = 'a';
   struct Node {
-    int next[26]; bool isEnd; int freq;
-    Node() : isEnd(false), freq(0) { fill(next, next + 26, -1); }
+    int next[26];
+    bool is_end;
+    int count;
+    Node() : is_end(false), count(0) { std::fill(next, next + 26, -1); }
   };
-  vector<Node> tree;
-  Trie() { tree.push_back(Node()); }
-  void insert(const string& s) {
+  std::vector<Node> tree;
+  Trie() { tree.emplace_back(); }
+  void insert(const std::string& s) {
     int p = 0;
-    tree[p].freq++;
+    tree[p].count++;
     for (char c : s) {
       int idx = c - base;
       if (tree[p].next[idx] == -1) {
         tree[p].next[idx] = tree.size();
-        tree.push_back(Node());
+        tree.emplace_back();
       }
       p = tree[p].next[idx];
-      tree[p].freq++;
+      tree[p].count++;
     }
-    tree[p].isEnd = true;
+    tree[p].is_end = true;
   }
-  bool search(const string& s) {
+  bool search(const std::string& s) {
     int p = 0;
     for (char c : s) {
       int idx = c - base;
       if (tree[p].next[idx] == -1) return false;
       p = tree[p].next[idx];
     }
-    return tree[p].isEnd;
+    return tree[p].is_end;
   }
-  bool startsWith(const string& s) {
+  bool startsWith(const std::string& s) {
     int p = 0;
     for (char c : s) {
       int idx = c - base;
@@ -41,12 +45,12 @@ struct Trie {
 };
 
 // number of ways to form string S using words in the dictionary
-int word_combinations(const string& s, const vector<string>& words) {
+int word_combinations(const std::string& s, const std::vector<std::string>& words) {
   const int MOD = 1e9 + 7;
   int n = s.size();
   Trie trie;
   for (auto& word : words) trie.insert(word);
-  vector<int> dp(n + 1, 0);
+  std::vector<int> dp(n + 1, 0);
   dp[0] = 1; // base case: empty string
   for (int i = 0; i < n; i++) {
     int p = 0; // start at root of trie
@@ -54,7 +58,7 @@ int word_combinations(const string& s, const vector<string>& words) {
       int idx = s[j] - 'a';
       if (trie.tree[p].next[idx] == -1) break; // no matching prefix
       p = trie.tree[p].next[idx];
-      if (trie.tree[p].isEnd) dp[j + 1] = (dp[j + 1] + dp[i]) % MOD; // extend ways
+      if (trie.tree[p].is_end) dp[j + 1] = (dp[j + 1] + dp[i]) % MOD; // extend ways
     }
   }
   return dp[n];

@@ -74,7 +74,7 @@ Majority of material coming from [codeforces blogs](https://codeforces.com/catal
     - [x] string hashing (double polynomial rolling hash)
     - [x] suffix array
     - [x] Z-Algorithm
-    - [ ] trie (prefix tree)
+    - [x] trie (prefix tree)
     - [ ] Aho–Corasick (multiple pattern matching)
 
 - [x] **bit manipulation**
