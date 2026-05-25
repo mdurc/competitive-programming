@@ -73,6 +73,7 @@ $T(N) = aT\left(\frac{N}{b}\right) + O(N^d)$
     * $T(n) = n^d + O(n^d \log_b n) = \mathbf{O(n^d \log_b n)}$
 
 **Summary:**
+
 $$T(n) = aT\left(\frac{n}{b}\right) + O(n^d)$$
 $$
 T(n)=

@@ -81,6 +81,7 @@
 
 > **Note:** I have found that the intuition to the algorithm described above is easy to digest, however the specific implementation details can get very confusing due to the deep levels of nested array indexing, different variables/arrays, etc. The following sample walkthrough describes the algorithm as it is being computed for a sample string.
 
+[suffix-example.pdf](attachments/suffix-example.pdf)
 ![](attachments/suffix-example.pdf)
 
 ### 2. The LCP Array & Kasai's Algorithm ($O(N)$)

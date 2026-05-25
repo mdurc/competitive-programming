@@ -22,7 +22,10 @@
 * When comparing the next character $S[L]$ against the expected character $S[R]$:
     * **Match ($S[L] == S[R]$):** The matching prefix length simply increases by 1. We set $\text{lps}[R] = L + 1$.
     * **Mismatch ($S[L] \neq S[R]$):** There might be a shorter prefix that still matches. We find the next longest fallback using the $\text{lps}$ array: $L = \text{lps}[L-1]$. We repeat this fallback until we find a match or $L$ hits $0$.
+
+[prefix-function.pdf](attachments/prefix-function.pdf)
 ![](attachments/prefix-function.pdf)
+
 ```cpp
 std::vector<int> prefix_function(const std::string& s) {
   int n = (int)s.size();
