@@ -1,3 +1,5 @@
+**Primary resources:** youtube videos (Errichto, WilliamFiset, AlgorithmsLive!, SecondThread), [codeforces blogs](https://codeforces.com/catalog), [cp-algorithms](https://cp-algorithms.com/index.html), and Guide to Competitive Programming by Antti Laaksonen
+
 **Note:** most competitive programming problems don't just test your knowledge of algorithms; it tests your ability to make mathematical observations and reduce complex problems into simple ones. The majority of the problem solutions fall into the category of Ad-Hoc, Greedy, or Math. The most relevent areas to study are the following: ad-hoc, greedy, number theory, binary search, prefix sums/two pointers, dynamic programming, rolling hash, segment tree, disjoint set union.
 
 **C++ Implementation Tricks**

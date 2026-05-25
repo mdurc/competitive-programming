@@ -1,5 +1,3 @@
-Majority of material coming from [codeforces blogs](https://codeforces.com/catalog) and [cp-algorithms](https://cp-algorithms.com/index.html)
-
 - [x] **binary search**
     - [x] std::lower_bound and std::upper_bound
     - [x] ternary search (extrema of unimodal functions)
@@ -16,19 +14,61 @@ Majority of material coming from [codeforces blogs](https://codeforces.com/catal
     - [x] mo's algorithm (standard square-root decomposition for offline range queries)
 
 - [ ] **math & number theory**
+    - Focus: what theorems/axioms are true; how can we use them in programming? Knowing what situations to be able to use a given property is just as important as knowing the property, especially in competitive programming.
     - [ ] modular arithmetic & modular inverse
-    - [ ] binary exponentiation
-    - [ ] matrix exponentiation (for O(log n) linear recurrences i.e. fibonacci)
-    - [ ] extended euclidean algorithm
-        - [ ] gcd/lcm
-        - [ ] divisors
-    - [ ] prime algorithms
-        - [ ] prime divisor composition
-    - [ ] standard sieve of eratosthenes
-    - [ ] smallest prime factor sieve (for prime factorization)
-    - [ ] combinatorics (precomputing factorials and inverses via fermat's little theorem)
-    - [ ] inclusion exclusion
-    - [ ] euler's totient function
+    - [ ] number theory
+        - [ ] primes, factors, factorization
+            - [ ] prime divisor composition
+            - [ ] standard sieve of eratosthenes
+        - [ ] extended euclidean algorithm
+            - [ ] gcd/lcm
+            - [ ] divisors
+        - [ ] Euler's theorem
+        - [ ] Euler's totient function
+        - [ ] binary exponentiation
+            - [ ] matrix exponentiation (for O(log n) linear recurrences i.e. fibonacci)
+    - [ ] combinatorics
+        - [ ] binomial coefficients
+        - [ ] catalan numbers
+        - [ ] inclusion-exclusion
+        - [ ] burnside's lemma
+        - [ ] cayley's formula
+        - [ ] factorials and inverses
+        - [ ] combinations vs permutations
+    - [ ] matrices
+        - [ ] matrix operations
+        - [ ] linear recurrences
+        - [ ] graphs and matrices
+        - [ ] gaussian elimination
+    - [ ] probability
+        - [ ] random variables
+        - [ ] expected value
+
+- [ ] **graphs & trees**
+    - [ ] basic graph terminology/representations
+        - [ ] cycle detection
+    - [ ] bfs/dfs
+        - [ ] 0-1 BFS (deque for graphs with edge weights of only 0 and 1)
+    - [ ] shortest paths (dikjstra, floyd, bellman-ford)
+        - [ ] multi-source versions
+    - [ ] directed acyclic graphs
+        - [ ] topological ordering and iteractions with DP
+    - [ ] Successor Graphs? (cycle detection?)
+    - [ ] trees
+        - [ ] tree traversals, diameters, longest paths
+        - [ ] binary lifting
+            - [ ] lowest common ancestor
+        - [ ] mst (kruskals with dsu) (is prim's necessary?)
+        - [ ] Centroid Decomposition
+        - [ ] Heavy-light decomposition
+    - [ ] SCC (kosaraju's)
+        - [ ] 2-SAT (via SCCs)
+    - [ ] Complete paths
+        - [ ] eulerian path/circuit
+        - [ ] hamiltonian path/circuit
+    - [ ] Bridges and articulation points
+    - [ ] Bipartite check / graph coloring
+    - [ ] Network min/max flow
 
 - [ ] **dynamic programming**
     - [ ] approaching solutions (state definition, transitions, DAG representation)
@@ -40,26 +80,6 @@ Majority of material coming from [codeforces blogs](https://codeforces.com/catal
     - [ ] dp optimizations
     - [ ] divide and conquer optimization
     - [ ] convex hull trick
-
-- [ ] **graphs & trees**
-    - [ ] basic graph terminology/representations
-        - [ ] cycle detection
-    - [ ] bfs/dfs
-        - [ ] 0-1 BFS (deque for graphs with edge weights of only 0 and 1)
-    - [ ] shortest paths (dikjstra, floyd, bellman-ford)
-        - [ ] multi-source versions
-    - [ ] SCC (kosaraju's)
-        - [ ] 2-SAT (via SCCs)
-    - [ ] bridges and articulation points
-    - [ ] eulerian path/circuit, hamiltonian path
-    - [ ] directed acyclic graphs
-        - [ ] topological ordering
-    - [ ] bipartite check / graph coloring
-    - [ ] trees
-        - [ ] binary lifting (lowest common ancestor)
-        - [ ] mst (kruskals with dsu)
-        - [ ] dsu on trees/sack (offline subtree queries)
-    - [ ] network min/max flow (dinic's algorithm)
 
 - [x] **data structures**
     - [x] disjoint set union (dsu)
@@ -75,7 +95,7 @@ Majority of material coming from [codeforces blogs](https://codeforces.com/catal
     - [x] Z-Algorithm
     - [x] trie (prefix tree)
     - [x] prefix function & kmp
-    - [ ] Aho–Corasick (multiple pattern matching)
+    - [x] Aho–Corasick (multiple pattern matching)
 
 - [x] **bit manipulation**
     - [x] subsets, masking, xor tricks
@@ -100,5 +120,3 @@ Majority of material coming from [codeforces blogs](https://codeforces.com/catal
     - [ ] meet in the middle (for subsets where $n=40$)
     - [ ] persistant segment trees (2d queries)
     - [ ] closest pair of points (divide and conquer)
-    - [ ] Centroid Decomposition
-    - [ ] Heavy-light decomposition
