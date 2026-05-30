@@ -43,22 +43,22 @@
         - [x] graphs and matrices
 
 - [ ] **graphs & trees**
-    - [ ] basic graph terminology/representations
-        - [ ] cycle detection
-    - [ ] bfs/dfs
-        - [ ] 0-1 BFS (deque for graphs with edge weights of only 0 and 1)
-    - [ ] shortest paths (dikjstra, floyd, bellman-ford)
-        - [ ] multi-source versions
-    - [ ] directed acyclic graphs
-        - [ ] topological ordering and iteractions with DP
-    - [ ] Successor Graphs? (cycle detection?)
-    - [ ] trees
-        - [ ] tree traversals, diameters, longest paths
-        - [ ] binary lifting
-            - [ ] lowest common ancestor
-        - [ ] mst (kruskals with dsu) (is prim's necessary?)
-        - [ ] Centroid Decomposition
-        - [ ] Heavy-light decomposition
+    - [x] basic graph terminology/representations
+        - [x] cycle detection
+    - [x] bfs/dfs
+        - [x] 0-1 BFS (deque for graphs with edge weights of only 0 and 1)
+    - [x] shortest paths (dikjstra, floyd, bellman-ford)
+        - [x] multi-source versions
+    - [x] directed acyclic graphs
+        - [x] topological ordering and iteractions with DP
+    - [x] Successor Graphs? (cycle detection?)
+    - [x] trees
+        - [x] tree traversals, diameters, longest paths
+        - [x] binary lifting
+            - [x] lowest common ancestor
+        - [x] mst (kruskals with dsu) ~~(is prim's necessary?)~~
+        - [x] Centroid Decomposition
+        - [x] Heavy-light decomposition
     - [ ] SCC (kosaraju's)
         - [ ] 2-SAT (via SCCs)
     - [ ] Complete paths

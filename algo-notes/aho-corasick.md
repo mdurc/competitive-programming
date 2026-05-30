@@ -27,7 +27,7 @@
 ### Constructing Output and Failure Links
 * Standard Aho-Corasick implementation:
     * During the search phase, if you read a character and the current node doesn't have an edge for it, you have to use a KMP-style while loop to manually walk up the fail-links until you find a node that does have that edge for the current character.
-* **DFA Optimization:** during the [BFS](breadth-first-search.md) build phase, if a node is missing a child edge for a specific character, we simply assign the edge intended for the character to route to wherever the fail-link-node would route us for that character. This means that the trie's **search** implementation doesn't have to consider the fail-links at all. 
+* **DFA Optimization:** during the [BFS](graph-traversals.md) build phase, if a node is missing a child edge for a specific character, we simply assign the edge intended for the character to route to wherever the fail-link-node would route us for that character. This means that the trie's **search** implementation doesn't have to consider the fail-links at all.
 
 ```cpp
 // mxNodes must be >= the sum of the lengths of all strings inserted

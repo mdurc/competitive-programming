@@ -7,7 +7,7 @@
 
 - Segment trees can perform both operations in $O(\log N)$ time.
     - We can build a binary tree over the target array.
-    - The root node stores the range-answer for the entire array $[0, N-1]$. The root's left child stores the left half, and the right child stores the right half, dividing recursively until the leaves store individual elements. 
+    - The root node stores the range-answer for the entire array $[0, N-1]$. The root's left child stores the left half, and the right child stores the right half, dividing recursively until the leaves store individual elements.
 
 * **Operations (query/update):**
   * When you **query a range**, we traverse through the tree and add together nodes that represent a range of values that are completely covered within the target range in the query. Sometimes this will mean using a leaf node, other times, it will be the internal nodes.

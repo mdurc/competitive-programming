@@ -73,7 +73,7 @@ The Sprague-Grundy Theorem states: **Every impartial game under normal play is m
 
 ### 5. Finding Grundy Values
 
-To find the Grundy value of a game state, model the game as a *[Directed Acyclic Graph (DAG)](directed-acyclic-graph.md)* where vertices are game states and directed edges are valid moves. Terminal states (vertices with no outgoing edges) are losing states because the current player has no valid moves left to make.
+To find the Grundy value of a game state, model the game as a *[Directed Acyclic Graph (DAG)](graph-traversals.md)* where vertices are game states and directed edges are valid moves. Terminal states (vertices with no outgoing edges) are losing states because the current player has no valid moves left to make.
 
 * We calculate the Grundy value $G(u)$ of a state $u$ using the **Minimum Excluded (MEX)** function.
 * The MEX of a set of integers is the smallest non-negative integer strictly not present in the set.

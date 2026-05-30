@@ -17,7 +17,7 @@
   1. **Path Compression:** When you walk up the tree to find the root, redirect every node on that path to point directly to the root. This flattens the tree dynamically.
   2. **Union by Size:** When merging two roots, always attach the smaller tree to the root of the larger tree. This guarantees the tree depth never exceeds $\log N$.
 
-* **Usage:** this data structure is used to create the forest in [Kruskals MST algorithm](kruskals.md).
+* **Usage:** this data structure is used to create the forest in [Kruskals MST algorithm](trees.md).
 
 ### Implementation
 

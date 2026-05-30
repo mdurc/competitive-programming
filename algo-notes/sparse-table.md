@@ -4,7 +4,7 @@
 
 * An **idempotent** operation is one that can be repeated to the same element multiple times without ever producing a different result ($\min(x,x) = x$).
 
-* Just like with [binary lifting](binary-lifting.md), we leverage the [binary representation](bit-manipulation.md) of indices perform operations in powers of 2. Our structure is very similar as well: `int m[N][LOG]`.
+* Just like with [binary lifting](trees.md), we leverage the [binary representation](bit-manipulation.md) of indices perform operations in powers of 2. Our structure is very similar as well: `int m[N][LOG]`.
 * For each power of 2, such that $2^x \le N$, we want to store the minimum/maximum value for all intervals on $A$, of size $2^x$.
 
 ![](attachments/sparse-RMQ-storage.png)

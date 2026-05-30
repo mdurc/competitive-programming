@@ -22,7 +22,7 @@
     * **Sparse Graph:** A graph where $m$ is relatively close to $n$ (e.g., $m \le 10^5$). Requires an Adjacency List.
     * **Dense Graph:** A graph where $m$ is close to $n^2$. Can sometimes be represented with an Adjacency Matrix.
 * **Core Substructures:**
-    * **Tree:** A connected, undirected graph with no cycles. A valid tree will always have exactly $n-1$ edges.
+    * **[Tree](trees.md):** A connected, undirected graph with no cycles. A valid tree will always have exactly $n-1$ edges.
     * **DAG (Directed Acyclic Graph):** A directed graph with no directed cycles. Foundational for DP states.
     * **Bipartite Graph:** A graph whose vertices can be divided into two completely independent sets such that every edge strictly connects a vertex from the first set to the second. Bipartite graphs cannot contain any cycles of odd length.
 
@@ -67,7 +67,7 @@ void dfs(int u) {
 ```
 
 **Breadth-First Search (BFS):** explores neighbors level by level. Implemented using a queue.
-- **Best for:** Finding the shortest path in an **unweighted** (or consistently weighted) graph.
+- **Best for:** Finding the [shortest path](shortest-paths.md) in an **unweighted** (or consistently weighted) graph.
   - The first time BFS reaches a node, it is guaranteed to be via the shortest path (# of steps).
 ```cpp
 int dist[mxn];
