@@ -53,12 +53,12 @@ void add_undirected_edge(int u, int v) {
 - **Best for:** Connectivity, cycle detection, tree traversals, and DP states.
 - A common modification for acylic graphs is to simply provide the last node we came from in the parameters instead of keeping a visited array.
 ```cpp
-bool vis[mxn];
+bool seen[mxn];
 void dfs(int u) {
   // previsit
-  vis[u] = true;
+  seen[u] = true;
   for (int v: adj[u]) {
-    if (!vis[v]) {
+    if (!seen[v]) {
       dfs(v);
     }
   }
@@ -154,9 +154,9 @@ Detecting a cycle depends heavily on whether the graph is *undirected* or *direc
 **Undirected Graphs:** ensure that the visited neighbor is not the immediate parent of the current node
 ```cpp
 bool undirected_cycle(int u, int parent) {
-  vis[u] = true;
+  seen[u] = true;
   for (int v: adj[u]) {
-    if (!vis[v]) {
+    if (!seen[v]) {
       if (undirected_cycle(v, u)) return true;
     } else if (v != parent) {
       return true;
