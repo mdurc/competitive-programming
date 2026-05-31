@@ -1,4 +1,4 @@
-## Dynamic Programming Fundamentals
+## Dynamic Programming Intuition
 
 Dynamic Programming (DP) is an optimization technique for **recursive problems**.
 - A recursive tree often includes a lot of unecessary recomputation.

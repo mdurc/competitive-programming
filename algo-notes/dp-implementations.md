@@ -1,4 +1,4 @@
-> These problems cover common techniques and ideas within dynamic programming solutions. Often times a solution will be some variation of these.
+> These problems cover common techniques and ideas within [dynamic programming](dynamic-programming.md) solutions. Often times a solution will be some variation of these.
 
 ### 1. Knapsack Problems
 The Knapsack problem asks you to select a subset of items to maximize total value without exceeding a strict weight capacity.

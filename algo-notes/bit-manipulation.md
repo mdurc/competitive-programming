@@ -1,6 +1,6 @@
 ## Bit Manipulation
 
-> **TL;DR:** Leverage integer binary representations to efficiently represent subsets, optimize space, and perform operations in $O(1)$ time. Essential for subsets, [bitmask DP](bitmask-dp.md), and [combinatorial](combinatorics.md) brute-force.
+> **TL;DR:** Leverage integer binary representations to efficiently represent subsets, optimize space, and perform operations in $O(1)$ time. Essential for subsets, [bitmask DP](dp-state-representations.md), and [combinatorial](combinatorics.md) brute-force.
 
 ### Fundamentals
 

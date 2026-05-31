@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-using ll = long long;
 const int mxn = 2e5 + 5;
 bool is_prime[mxn];
 int min_prime_factor[mxn];
@@ -80,23 +79,15 @@ std::vector<std::vector<int>> subsets(std::vector<int>& nums) {
   return res;
 }
 
-// O(log(min(a, b))), just use std::gcd and std::lcm
-ll gcd(ll a, ll b) {
-  while (b) {
-    a %= b;
-    std::swap(a, b);
-  }
-  return a;
-}
-ll lcm(ll a, ll b) { return a / gcd(a, b) * b; }
+long long lcm(long long a, long long b) { return a / std::gcd(a, b) * b; }
 
 // Modular Arithmetic
 const int MOD = 1e9 + 7;
-ll mod_add(ll a, ll b) { return (a + b) % MOD; }
-ll mod_sub(ll a, ll b) { return (a - b + MOD) % MOD; }
-ll mod_mul(ll a, ll b) { return (a * b) % MOD; }
-ll mod_pow(ll a, ll b) {
-  ll res = 1;
+long long mod_add(long long a, long long b) { return (a + b) % MOD; }
+long long mod_sub(long long a, long long b) { return (a - b + MOD) % MOD; }
+long long mod_mul(long long a, long long b) { return (a * b) % MOD; }
+long long mod_pow(long long a, long long b) {
+  long long res = 1;
   while (b) {
     if (b & 1) res = mod_mul(res, a);
     a = mod_mul(a, a);
@@ -106,11 +97,11 @@ ll mod_pow(ll a, ll b) {
 }
 // fermats: If p is prime and the gcd(a,p) = 1 then a^p = a mod p
 // mod must be prime for fermat's little theorem
-ll mod_inv(ll a) { return mod_pow(a, MOD - 2); }
-ll mod_div(ll a, ll b) { return mod_mul(a, mod_inv(b)); }
+long long mod_inv(long long a) { return mod_pow(a, MOD - 2); }
+long long mod_div(long long a, long long b) { return mod_mul(a, mod_inv(b)); }
 
 // Combinatorics
-ll fact[mxn], inv_fact[mxn];
+long long fact[mxn], inv_fact[mxn];
 void precompute_factorials(int n) {
   fact[0] = 1;
   for (int i = 1; i <= n; i++)
@@ -120,11 +111,11 @@ void precompute_factorials(int n) {
     inv_fact[i] = mod_mul(inv_fact[i + 1], i + 1);
   }
 }
-ll nCr(int n, int r) {
+long long nCr(int n, int r) {
   if (r < 0 || r > n) return 0;
   return mod_mul(fact[n], mod_mul(inv_fact[r], inv_fact[n - r]));
 }
-ll nPr(int n, int r) {
+long long nPr(int n, int r) {
   if (r < 0 || r > n) return 0;
   return mod_mul(fact[n], inv_fact[n - r]);
 }

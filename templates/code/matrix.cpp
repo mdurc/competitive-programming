@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+
 const int N = 2; // 2x2 matrix
 const int MOD = 1e9;
 struct matrix_t {
@@ -21,7 +23,7 @@ struct matrix_t {
     }
     return p;
   }
-  matrix_t power(ll p) const {
+  matrix_t power(long long p) const {
     matrix_t r(1);
     matrix_t a = *this;
     while (p) {
@@ -54,10 +56,10 @@ struct matrix_t {
           break;
         }
       }
-      if (pivot == -1) throw runtime_error("Matrix is singular");
+      if (pivot == -1) throw std::runtime_error("Matrix is singular");
       if (pivot != i) {
-        swap(a.x[i], a.x[pivot]);
-        swap(inv.x[i], inv.x[pivot]);
+        std::swap(a.x[i], a.x[pivot]);
+        std::swap(inv.x[i], inv.x[pivot]);
       }
       int inv_pivot = mod_inv(a.x[i][i]);
       for (int j = 1; j <= N; ++j) {
@@ -77,40 +79,3 @@ struct matrix_t {
     return inv;
   }
 };
-
-// simple 2x2 matrix multiplication
-void mul(ll a[2][2], ll b[2][2]) {
-  ll res[2][2];
-  res[0][0] = (a[0][0] * b[0][0] % MOD + a[0][1] * b[1][0] % MOD) % MOD;
-  res[0][1] = (a[0][0] * b[0][1] % MOD + a[0][1] * b[1][1] % MOD) % MOD;
-  res[1][0] = (a[1][0] * b[0][0] % MOD + a[1][1] * b[1][0] % MOD) % MOD;
-  res[1][1] = (a[1][0] * b[0][1] % MOD + a[1][1] * b[1][1] % MOD) % MOD;
-  memcpy(a, res, sizeof(res));
-}
-
-int main() {
-  int n = 10;
-  matrix_t fib; // transformation matrix
-  fib.x[1][1] = 1;
-  fib.x[1][2] = 1;
-  fib.x[2][1] = 1;
-  fib.x[2][2] = 0;
-
-  // Claim to our induction over the transformation matrix
-  // [0 1]^n [f(0)] = [ f(n) ]
-  // [1 1]   [f(1)] = [f(n+1)]
-  matrix_t result = fib.power(n);
-  cout << "fib(" << n << ") = " << (result.x[1][1] * 0 + result.x[1][2] * 1) % MOD << endl;
-
-  // alternative simpler approach:
-  ll mat[2][2] = {{0, 1}, {1, 1}};
-  ll res[2][2] = {{1, 0}, {0, 1}}; // identity matrix
-  // calculate mod-pow
-  while (n) {
-    if (n & 1) mul(res, mat);
-    mul(mat, mat);
-    n >>= 1;
-  }
-  // mult by [f(0), f(1)] vector and get f(n)
-  cout << (res[0][0] * 0 + res[0][1] * 1) << "\n";
-}

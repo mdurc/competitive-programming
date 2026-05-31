@@ -10,7 +10,7 @@
 ![](attachments/sparse-RMQ-storage.png)
 
 * We can perform preprocessing to compute this 2d array.
-* Since any number can be represented as a sum of powers of two (binary), we can use dynamic programming to utilize the smaller intervals that have already been computed, to compute the min/max values of larger intervals.
+* Since any number can be represented as a sum of powers of two (binary), we can use [dynamic programming](dynamic-programming.md) to utilize the smaller intervals that have already been computed, to compute the min/max values of larger intervals.
 
 ![](attachments/sparse-RMQ-dp.png)
 

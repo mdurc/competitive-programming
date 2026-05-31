@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+
 // Assumes 1-based node indexing
 struct LCA {
   int n, MAX_LOG = 20;

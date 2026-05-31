@@ -1,5 +1,7 @@
 ## DP State Spaces
 
+See [dynamic programming intuition](dynamic-programming.md) and [dynamic programming implementations](dp-implementations.md)
+
 When a problem's state cannot be easily represented by a simple index, we must use another construct.
 - Two of the most common state representations are **Bitmask DP** and **Digit DP**.
 

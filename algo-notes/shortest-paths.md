@@ -96,7 +96,7 @@ bool bellman_ford(int n, int start) {
 ### Floyd-Warshall Algorithm
 - Computes the shortest path between **all pairs** of nodes simultaneously.
 - Handles negative weights (but **not negative cycles**).
-- **Dynamic programming algorithm:**
+- **[Dynamic programming](dynamic-programming.md) algorithm:**
   - Let $dist[i][j]$ be the shortest distance from $i$ to $j$.
   - Iterate through every possible intermediate node $k$.
     - If routing the path from $i \to k \to j$ is strictly shorter than the current known path from $i \to j$, we update it.
