@@ -68,3 +68,6 @@ $$\begin{pmatrix} F_N \\ F_{N-1} \end{pmatrix} = T^{N-1} \times \begin{pmatrix} 
 
 - If you take an adjacency matrix $A$ and raise it to the $k$-th power, the value at $A^k[u][v]$ will be exactly the **number of distinct paths of length $k$** from node $u$ to node $v$.
     - If a problem asks "How many ways can you travel from city $X$ to city $Y$ in exactly $10^9$ steps?", we can construct the adjacency matrix and use Matrix Exponentiation to compute $A^{10^9}$.
+
+### Resources
+- Fibonacci recurrence relation (matrix): https://en.wikipedia.org/wiki/Fibonacci_sequence

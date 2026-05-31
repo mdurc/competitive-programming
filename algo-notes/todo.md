@@ -69,9 +69,9 @@
     - [x] Network min/max flow
 
 - [ ] **dynamic programming**
-    - [ ] approaching solutions (state definition, transitions, DAG representation)
-        - [ ] compared with divide and conquer
-    - [ ] top-down memoization vs bottom-up tabulation
+    - [x] approaching solutions (state definition, transitions, DAG representation)
+        - [x] compared with divide and conquer
+    - [x] top-down memoization vs bottom-up tabulation
     - [ ] classic problems: knapsack (0/1 and unbounded), LIS, LCS, edit distance, longest palindromic substring/subsequence
     - [ ] bitmask dp (subset traversals)
     - [ ] digit dp (counting numbers in a range with specific properties)
