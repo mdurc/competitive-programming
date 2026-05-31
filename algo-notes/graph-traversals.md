@@ -120,6 +120,16 @@ void zero_one_bfs(int start) {
 }
 ```
 
+### DFS Trees
+
+A DFS naturally creates a tree structure by only traversing edges that reveal a new, unvisited, node. The edges that are skipped can be labelled, and are often used to identify particular properties of a given graph.
+- For example:
+    - detect cycles (back edges),
+    - determine ancestor–descendant relationships (tree and forward edges),
+    - analyze connectivity and traversal structure (cross edges),
+
+![](attachments/dfs-tree.png)
+
 ### Bipartite Check (Graph Coloring)
 A graph is bipartite if you can divide its vertices into two independent sets such that every edge connects a vertex in one set to a vertex in the other.
 

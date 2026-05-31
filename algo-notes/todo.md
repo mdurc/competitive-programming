@@ -42,7 +42,7 @@
         - [x] linear recurrences
         - [x] graphs and matrices
 
-- [ ] **graphs & trees**
+- [x] **graphs & trees**
     - [x] basic graph terminology/representations
         - [x] cycle detection
     - [x] bfs/dfs
@@ -59,14 +59,14 @@
         - [x] mst (kruskals with dsu) ~~(is prim's necessary?)~~
         - [x] Centroid Decomposition
         - [x] Heavy-light decomposition
-    - [ ] SCC (kosaraju's)
-        - [ ] 2-SAT (via SCCs)
-    - [ ] Complete paths
-        - [ ] eulerian path/circuit
-        - [ ] hamiltonian path/circuit
-    - [ ] Bridges and articulation points
-    - [ ] Bipartite check / graph coloring
-    - [ ] Network min/max flow
+    - [x] SCC (kosaraju's)
+        - [x] 2-SAT (via SCCs)
+    - [x] Complete paths
+        - [x] eulerian path/circuit
+        - [x] hamiltonian path/circuit
+    - [x] Bridges and articulation points
+    - [x] Bipartite check / graph coloring
+    - [x] Network min/max flow
 
 - [ ] **dynamic programming**
     - [ ] approaching solutions (state definition, transitions, DAG representation)
