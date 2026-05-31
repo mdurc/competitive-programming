@@ -178,7 +178,7 @@ Strongly polynomial maximum flow algorithm with a runtime of $O(V^2 E)$.
 - **Residual (Reverse) Edge:** If we push $X$ units of flow along an edge $U \to V$, we artificially create a "reverse" edge $V \to U$ with a capacity of $X$.
     - These are *derived* edges that aren't a part of the presented network.
     - They are used as an "undo" mechanism for bad augmenting paths that don't lead to a maximum flow. The flow can now always flow backwards if a better path may exist.
-    - They have a capacity of zero, and a flow equal to $-1 \times \text{forward\_edge}$ flow.
+    - They have a capacity of zero, and a flow equal to $-1 \times \text{forwardedge}$ flow.
         - Since all forward edge flows are initially zero, residual edges start as `0/0`.
     - **Property:** `remaining_capacity(u -> v) + remaining_capacity(v -> u residual) = capacity(u -> v)`
 - **Saturated Edge:** an edge with a remaining capacity of zero.
