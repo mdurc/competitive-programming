@@ -68,16 +68,14 @@
     - [x] Bipartite check / graph coloring
     - [x] Network min/max flow
 
-- [ ] **dynamic programming**
+- [x] **dynamic programming**
     - [x] approaching solutions (state definition, transitions, DAG representation)
         - [x] compared with divide and conquer
     - [x] top-down memoization vs bottom-up tabulation
-    - [ ] classic problems: knapsack (0/1 and unbounded), LIS, LCS, edit distance, longest palindromic substring/subsequence
-    - [ ] bitmask dp (subset traversals)
-    - [ ] digit dp (counting numbers in a range with specific properties)
-    - [ ] dp optimizations
-    - [ ] divide and conquer optimization
-    - [ ] convex hull trick
+    - [x] classic problems: knapsack (0/1 and unbounded), LIS, LCS, edit distance, longest palindromic substring/subsequence
+    - [x] bitmask dp (subset traversals)
+    - [x] digit dp (counting numbers in a range with specific properties)
+    - [x] dp optimizations
 
 - [x] **data structures**
     - [x] disjoint set union (dsu)
@@ -119,3 +117,5 @@
     - [ ] persistant segment trees (2d queries)
     - [ ] closest pair of points (divide and conquer)
     - [ ] gaussian elimination
+    - [ ] dp: divide and conquer optimization
+    - [ ] dp: convex hull trick
