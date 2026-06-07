@@ -159,8 +159,6 @@ int LCS(const std::string& a, const std::string& b) {
 }
 ```
 
----
-
 ## 4. Edit Distance (Levenshtein Distance)
 
 Find the minimum number of operations (insert, delete, or replace) required to transform string `a` into string `b`.
