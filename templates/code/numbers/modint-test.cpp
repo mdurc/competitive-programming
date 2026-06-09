@@ -13,7 +13,7 @@ template<typename Head, typename... Tail> void debug_out(Head H, Tail... T) { st
 
 int main() {
   debug("--- TEST 1: Standard Int (10^9 + 7) ---");
-  Mint a = MOD_INT - 1;
+  Mint a = MOD - 1;
   Mint b = 2;
   debug("Start:", a, b);                     // Expect 1000000006 2
   debug("Add (overflow wrap):", a + b);      // Expect 1
@@ -27,8 +27,8 @@ int main() {
   // Expect 1000000006 1000000006 708828003
 
   debug("--- TEST 2: 64-bit Mod (u128 Logic) ---");
-  const ull MOD_LONG = 1000000000000000003ULL;
-  using LongMint = Mod<ull, MOD_LONG>;
+  const unsigned long long MOD_LONG = 1000000000000000003ULL;
+  using LongMint = Mod<unsigned long long, MOD_LONG>;
   LongMint x = 1000000000000000000ULL;
   LongMint y = 1000000000000000000ULL;
   debug("u128 Mult Check:", x * y); // Expect 9
@@ -39,7 +39,7 @@ int main() {
   debug("2^0:", bpow(Mint(2), 0));           // Expect 1
   debug("0^0:", bpow(zero, 0));              // Expect 1
   debug("0^5:", bpow(zero, 5));              // Expect 0
-  debug("2^Large:", bpow(Mint(2), MOD_INT)); // Expect 2
+  debug("2^Large:", bpow(Mint(2), MOD)); // Expect 2
 
   debug("Inv(1):", one.inv());             // Expect 1
   debug("Inv(-1):", neg1.inv());           // Expect 1000000006
@@ -56,7 +56,7 @@ int main() {
   debug("--- TEST DynMod ---");
 
   debug("u128 Mult Check:", x * y); // Expect 9
-  using Dmlong = DynMod<ull, 1>;
+  using Dmlong = DynMod<unsigned long long, 1>;
   Dmlong::setMod(1000000000000000003ULL);
   Dmlong dx = 1000000000000000000ULL;
   Dmlong dy = 1000000000000000000ULL;
